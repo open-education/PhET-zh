@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:esi="http://java.sun.com/JSP/Page" xml:lang="zh" lang="zh">
+
+<!-- Mirrored from phet.colorado.edu/zh_TW/simulations/category/physics/electricity-magnets-and-circuits by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Apr 2020 04:20:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>電、磁力與電流 - PhET 模擬教學</title>
+  
+  
+  <link rel="stylesheet" href="../../../../css/font-awesome/css/font-awesome.min-4.7.css">
+  <link rel="stylesheet" type="text/css" href="../../../../css/phet-v77-min.css"/>
+
+  <!-- class edu.colorado.phet.website.content.simulations.CategoryPage -->
+  <!-- host phet.colorado.edu -->
+  
+
+  
+
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+      rel="stylesheet">
+
+  <script type="text/javascript">
+    function initBreakpoint() {
+      var body = document.querySelector( 'body' );
+      var menuParents = document.querySelectorAll( '#page-nav-menu ul[role=menubar] .nav-menu-parent-text' );
+
+      if ( body && menuParents ) {
+        clearInterval( isLargeViewInterval );
+        window.phet = window.phet || {};
+        window.phet.cssBreakpoint = 40 + // page header container padding
+                                    220 + // phet and cu logos
+                                    75 + // search and user menus
+                                    ( body.className.indexOf( 'rtl' ) >= 0 ? 30 : 0 ) + // RTL languages need to break 30 pixels earlier somehow
+                                    Array.prototype.slice.call( menuParents )
+                                      .map( function( item ) {
+                                        return item.offsetWidth
+                                               - parseInt( window.getComputedStyle( item ).paddingRight )
+                                               - parseInt( window.getComputedStyle( item ).paddingLeft )
+                                               + 22; // 22 is horizontal padding + horizontal margin on nav-menu-parent-text in wide view
+                                      } )
+                                      .reduce( function( accumulator, currentItem ) { return accumulator + currentItem; }, 0 ); // dropdown menu width, flexible due to translations
+        const mediaString = '(min-width: ' + window.phet.cssBreakpoint + 'px)';
+        window.phet.isLargeView = function() {
+          return window.matchMedia( mediaString ).matches;
+        };
+
+        document.getElementById( 'page-wrapper' ).className = window.phet.isLargeView() ? 'wide' : 'narrow';
+        document.getElementById( 'page-header-container-wrapper' ).className = window.phet.isLargeView() ? 'expanded' : 'collapsed';
+      }
+    }
+
+    var isLargeViewInterval = setInterval( initBreakpoint, 50 );
+  </script>
+
+    <link rel="canonical" href="electricity-magnets-and-circuits.html"/>
+    <style type="text/css" id="edu-colorado-phet-website-content-simulations-CategoryPage-0">
+      .wrap-and-center {
+        margin: auto;
+        padding: 0 16px;
+        max-width: 1020px;
+        position: relative;
+      }
+
+      .category-page-content {
+        display: block;
+        width: fit-content;
+      }
+
+      @media (min-width: 830px) {
+        .category-page-content{
+          margin: auto
+        }
+      }
+
+      @media (max-width: 829px) and (min-width: 680px) {
+        .ltr .category-page-content{
+          margin-left: 140px;
+        }
+
+        .rtl .category-page-content{
+          margin-right: 140px;
+        }
+      }
+
+      @media (max-width: 679px ) {
+        .category-page-content{
+          margin: auto
+        }
+      }
+
+      .side-nav {
+        padding: 0 20px;
+        width: 140px;
+      }
+
+      @media (min-width: 680px ) {
+        .side-nav{
+          position: absolute;
+        }
+
+        .ltr .side-nav {
+          left: 0;
+        }
+
+        .rtl .side-nav {
+          right: 0;
+        }
+      }
+
+      .side-nav li.selected {
+        list-style-image: url("../../../../images/arrow-right.gif");
+      }
+
+      .side-nav li {
+        list-style-type: none;
+        padding: 2px 0;
+      }
+
+      .side-nav .selected a {
+        color: black;
+        font-weight: bold;
+      }
+
+      .side-nav a {
+        color: #727272;
+        text-decoration: none;
+        font-size: 10pt;
+        vertical-align: middle;
+      }
+
+      .side-nav a:hover {
+        color: #e01e5a;
+      }
+
+      .ltr .side-nav ul.children {
+        padding-left: 20px;
+      }
+
+      .ltr .side-nav ul.parents {
+        padding-left: 0;
+      }
+
+      .rtl .side-nav ul.children {
+        padding-right: 20px;
+      }
+
+      .rtl .side-nav ul.parents {
+        padding-right: 0;
+      }
+    </style>
+  
+        <meta property="og:site_name" content="PhET"/><meta property="twitter:site" content="@PhETsims"/><meta property="og:title" content="PhET 互動式模擬教學"/><meta property="twitter:title" content="PhET 互動式模擬教學"/><meta property="og:url" content="https://phet.colorado.edu/zh_TW/simulations/category/physics/electricity-magnets-and-circuits"/><meta property="twitter:card" content="summary"/><meta property="og:image" content="https://phet.colorado.edu/images/phet-social-media-logo.png"/><meta property="twitter:image" content="https://phet.colorado.edu/images/phet-social-media-logo.png"/><meta property="og:description" content="PhET 是一個延伸教育<a {0}>研究</a>專案計畫，透過動畫模擬遊戲的方式吸引學生探索與發現數學、科學方面的各種知識。它是於 2002 年由諾貝爾經濟學獎得主，科羅拉多大學的 Carl Wieman 教授所發起的。"/><meta property="twitter:description" content="PhET 是一個延伸教育<a {0}>研究</a>專案計畫，透過動畫模擬遊戲的方式吸引學生探索與發現數學、科學方面的各種知識。它是於 2002 年由諾貝爾經濟學獎得主，科羅拉多大學的 Carl Wieman 教授所發起的。"/>
+    
+    <link rel="stylesheet" href="../../../../footer.css">
+  
+    <style id="edu-colorado-phet-website-panels-PromotionPanel-0">
+      div.ipad-banner h2 {
+        color: #f08621;
+        font-size: 36px;
+        font-weight: 100;
+      }
+
+      div.ipad-banner h1 {
+        color: #f08621;
+        font-size: 78px;
+        font-weight: 100;
+        margin: 0 0 50px 0;
+      }
+
+      div.ipad-banner div {
+        display: inline-block;
+      }
+
+      div.ipad-banner {
+        margin: auto;
+        width: 560px;
+      }
+
+      div.ipad-banner ul {
+        margin-top: 0;
+      }
+
+      div.ipad-banner li {
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #333;
+      }
+    </style>
+  
+    <style type="text/css" id="edu-colorado-phet-website-panels-simulation-SimulationListViewPanel-0">
+      .regular-page-title .fa-caret-right {
+        font-size: 12pt;
+      }
+    </style>
+  </head>
+<body dir="ltr" class="ltr" id="offline-installer-body">
+<div id="page-wrapper" class="pre-load">
+  <div id="skipNav">
+    <a href="#main-content" accesskey="0" id="skipper" tabindex="1">
+      跳至主頁
+    </a>
+  </div>
+
+  
+
+  <div id="page-header" class="ltr">
+
+    
+
+    <div id="page-header-container-wrapper">
+      <div id="page-header-container" role="banner">
+        <div id="page-header-left">
+          <a href="../../../index.html" class="phet-logo-link">
+            <div class="phet-logo">
+              <img src="../../../../images/phet-logo-trademarked.png"
+                   alt="PhET Home Page"
+                   title="Go to the PhET home page"
+              />
+            </div>
+          </a>
+          <div class="cu-logo">
+            <a href="http://www.colorado.edu/" target="_blank">
+              <div class="cu-logo-image-clip">
+                <img src="../../../../images/logos/cu_logo.png" alt="University of Colorado"/>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <a id="collapsible-menu-toggle" role="button" aria-haspopup="menu" aria-expanded="false" aria-label="切換主選單">
+          <div id="toggle-container">
+          <span id="nw-rotate" class="rotate">
+            <span id="nw-translate" class="line"></span>
+          </span>
+            <span id="ne-rotate" class="rotate">
+            <span id="ne-translate" class="line"></span>
+          </span>
+            <span id="sw-rotate" class="rotate">
+            <span id="sw-translate" class="line"></span>
+          </span>
+            <span id="se-rotate" class="rotate">
+            <span id="se-translate" class="line"></span>
+          </span>
+            <span id="east-center-line" class="line center-line"></span>
+            <span id="west-center-line" class="line center-line"></span>
+          </div>
+        </a>
+
+        <div id="page-header-menus" class="ltr">
+          <div id="collapsible-menu">
+            <div id="search-container-mobile" role="search"></div>
+            <nav id="page-nav-menu" role="navigation">
+  <ul role="menubar">
+    <li class="nav-menu-item">
+      <a class="nav-menu-parent has-menu nav0" role="menuitem" id="nav.simulations" aria-haspopup="menu" aria-expanded="false">
+        <span class="nav-menu-parent-text">教學</span></a>
+      <div class="nav-menu-children">
+        <ul role="menu" aria-labelledby="nav.simulations">
+          <li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-new" href="../new.html">
+            <span class="nav-menu-child-text">新加入的教學主題</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-html" href="../html.html">
+            <span class="nav-menu-child-text">HTML5</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-physics" href="../physics.html">
+            <span class="nav-menu-child-text">物理</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-biology" href="../biology.html">
+            <span class="nav-menu-child-text">生物</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-chemistry" href="../chemistry.html">
+            <span class="nav-menu-child-text">化學</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-earth-science" href="../earth-science.html">
+            <span class="nav-menu-child-text">地球科學</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-math" href="../math.html">
+            <span class="nav-menu-child-text">數學</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-by-level" href="../by-level.html">
+            <span class="nav-menu-child-text">依年級區分教學主題</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-by-device" href="../by-device.html">
+            <span class="nav-menu-child-text">依裝置區分</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-all" href="../../../simulations.html">
+            <span class="nav-menu-child-text">所有的教學主題</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-simulations-translated" href="../../translated.html">
+            <span class="nav-menu-child-text">翻譯教學主題</span></a></li>
+        </ul>
+      </div>
+    </li><li class="nav-menu-item">
+      <a class="nav-menu-parent has-menu nav0" role="menuitem" id="nav.teaching" aria-haspopup="menu" aria-expanded="false">
+        <span class="nav-menu-parent-text">教學</span></a>
+      <div class="nav-menu-children">
+        <ul role="menu" aria-labelledby="nav.teaching">
+          <li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-about-general" href="../../../teaching-resources.html">
+            <span class="nav-menu-child-text">關於</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-forTeachers-tipsForUsingPhet" href="../../../teaching-resources/tipsForUsingPhet.html">
+            <span class="nav-menu-child-text">使用 PhET 的小提示</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-teacherIdeas-browse" href="https://phet.colorado.edu/zh_TW/teaching-resources/browse-activities">
+            <span class="nav-menu-child-text">瀏覽活動</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-teacherIdeas-submit" href="https://phet.colorado.edu/zh_TW/teaching-resources/submit-activity">
+            <span class="nav-menu-child-text">分享您的活動</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-teacherIdeas-manage" href="https://phet.colorado.edu/zh_TW/teaching-resources/manage-activities">
+            <span class="nav-menu-child-text">我的活動</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-workshops" href="../../../teaching-resources/workshops.html">
+            <span class="nav-menu-child-text">研習</span></a></li>
+        </ul>
+      </div>
+    </li><li class="nav-menu-item">
+      <a class="nav-menu-parent nav0" role="menuitem" href="../../../research.html">
+        <span class="nav-menu-parent-text">研究</span></a>
+      <div class="nav-menu-children empty">
+        
+      </div>
+    </li><li class="nav-menu-item">
+      <a class="nav-menu-parent has-menu nav0" role="menuitem" id="nav.accessibility" aria-haspopup="menu" aria-expanded="false">
+        <span class="nav-menu-parent-text">無障礙輔助</span></a>
+      <div class="nav-menu-children">
+        <ul role="menu" aria-labelledby="nav.accessibility">
+          <li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-about-general" href="../../../accessibility.html">
+            <span class="nav-menu-child-text">關於</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-accessibility-simulations" href="../../../accessibility/prototypes.html">
+            <span class="nav-menu-child-text">可使用的模擬教材</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-accessibility-research" href="../../../accessibility/research.html">
+            <span class="nav-menu-child-text">研究與設計</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-accessibility-implementation" href="../../../accessibility/implementation.html">
+            <span class="nav-menu-child-text">技術實作</span></a></li>
+        </ul>
+      </div>
+    </li><li class="nav-menu-item featured">
+      <a class="nav-menu-parent nav0" role="menuitem" href="../../../donate.html">
+        <span class="nav-menu-parent-text">贊助我們</span></a>
+      <div class="nav-menu-children empty">
+        
+      </div>
+    </li>
+  </ul>
+
+</nav>
+            <div id="search" role="search">
+              
+              <div id="search-container-desktop" class="search-hidden"></div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--This is a temporary placeholder-->
+  <div style="display: none;">
+    
+  </div>
+
+  <div>此版本於 2020/4/27 建立。更新程式可以從<a href="https://phet.colorado.edu/zh_TW/offline-access">網站上</a>取得。</div>
+
+  <div id="page-content" role="main" class="ltr">
+    
+  <div class="wrap-and-center">
+    <div class="side-nav">
+      <ul class="parents">
+        <li class="parent"><a href="../physics.html"><span>物理</span></a>
+        </li>
+        <ul class="children">
+          <li class="child"><a href="motion.html"><span>運動</span></a>
+          </li><li class="child"><a href="sound-and-waves.html"><span>聲音與波動</span></a>
+          </li><li class="child"><a href="work-energy-and-power.html"><span>功、能量與功率</span></a>
+          </li><li class="child"><a href="heat-and-thermodynamics.html"><span>熱</span></a>
+          </li><li class="child"><a href="quantum-phenomena.html"><span>量子現象</span></a>
+          </li><li class="child"><a href="light-and-radiation.html"><span>光與輻射</span></a>
+          </li><li class="child selected"><a href="electricity-magnets-and-circuits.html"><span>電、磁力與電流</span></a>
+          </li>
+        </ul>
+      </ul>
+    </div>
+    <div class="category-page-content">
+      <div>
+  
+
+  
+</div>
+      <div dir="ltr">
+  <div class="simulation-list-panel" dir="ltr">
+    <h1 class="regular-page-title">物理 <i class="fa fa-caret-right"></i> 電、磁力與電流</h1>
+    <table style="margin: 5px; border: none; padding: 0; width: 500px;" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="text-left-classic">
+          
+        </td>
+        <td class="text-right-classic">
+          <div class="toggle-index-category">
+            <span>
+              <a href="#" title="Thumbnail View" style="color: black;"><i class="fa fa-th" style="font-size: 18px"></i></a>
+            </span>
+            <span>
+              <a href="electricity-magnets-and-circuits/index.html" title="List View" style="color: grey;"><i class="fa fa-list" style="font-size: 18px"></i></a>
+            </span>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <div><div dir="ltr">
+    <div dir="ltr">
+        <table>
+            <tr>
+                <td class="simulation-list-item">
+                    <a href="../../../simulation/coulombs-law.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/html/coulombs-law/latest/coulombs-law-128.png" id="simulation-display-thumbnail-coulombs-law" alt="Screenshot of the simulation Coulomb&#39;s Law_庫侖定律" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Coulomb&#039;s Law_庫侖定律</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../../simulation/capacitor-lab-basics.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/html/capacitor-lab-basics/latest/capacitor-lab-basics-128.png" id="simulation-display-thumbnail-capacitor-lab-basics" alt="Screenshot of the simulation Capacitor Lab:Basics_電容實驗室：基礎" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Capacitor Lab:Basics_電容實驗室：基礎</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../../simulation/circuit-construction-kit-dc-virtual-lab.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/html/circuit-construction-kit-dc-virtual-lab/latest/circuit-construction-kit-dc-virtual-lab-128.png" id="simulation-display-thumbnail-circuit-construction-kit-dc-virtual-lab" alt="Screenshot of the simulation Circuit Construction Kit: DC - Virtual Lab_電路組裝套件：直流電 - 虛擬實驗室" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Circuit Construction Kit: DC - Virtual Lab_電路組裝套件：直流電 - 虛擬實驗室</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../../simulation/circuit-construction-kit-dc.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc-128.png" id="simulation-display-thumbnail-circuit-construction-kit-dc" alt="Screenshot of the simulation Circuit Construction Kit: DC_電路組裝套件：直流電" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Circuit Construction Kit: DC_電路組裝套件：直流電</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../../simulation/charges-and-fields.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/html/charges-and-fields/latest/charges-and-fields-128.png" id="simulation-display-thumbnail-charges-and-fields" alt="Screenshot of the simulation Charges And Fields_電荷與電場" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Charges And Fields_電荷與電場</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../../simulation/balloons-and-static-electricity.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/html/balloons-and-static-electricity/latest/balloons-and-static-electricity-128.png" id="simulation-display-thumbnail-balloons-and-static-electricity" alt="Screenshot of the simulation Balloons and Static Electricity_氣球和靜電引力" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Balloons and Static Electricity_氣球和靜電引力</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../../simulation/legacy/capacitor-lab.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/capacitor-lab/capacitor-lab-128.png" id="simulation-display-thumbnail-capacitor-lab" alt="Screenshot of the simulation Capacitor Lab 電容器實驗室" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Capacitor Lab 電容器實驗室</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-java"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../../simulation/legacy/circuit-construction-kit-ac.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/circuit-construction-kit/circuit-construction-kit-ac-128.png" id="simulation-display-thumbnail-circuit-construction-kit-ac" alt="Screenshot of the simulation 電路組裝套件(直流電和 交流電)" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">電路組裝套件(直流電和 交流電)</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-java"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../../simulation/legacy/magnet-and-compass.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/faraday/magnet-and-compass-128.png" id="simulation-display-thumbnail-magnet-and-compass" alt="Screenshot of the simulation 磁鐵和指南針" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">磁鐵和指南針</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-java"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../../simulation/legacy/magnets-and-electromagnets.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/faraday/magnets-and-electromagnets-128.png" id="simulation-display-thumbnail-magnets-and-electromagnets" alt="Screenshot of the simulation 磁鐵和電磁鐵" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">磁鐵和電磁鐵</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-java"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../../simulation/legacy/generator.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/faraday/generator-128.png" id="simulation-display-thumbnail-generator" alt="Screenshot of the simulation 發電機" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">發電機</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-java"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../../simulation/legacy/electric-hockey.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/electric-hockey/electric-hockey-128.png" id="simulation-display-thumbnail-electric-hockey" alt="Screenshot of the simulation 電場曲棍球" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">電場曲棍球</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-java"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../../simulation/legacy/faraday.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/faraday/faraday-thumbnail.png" id="simulation-display-thumbnail-faraday" alt="Screenshot of the simulation 法拉第的電磁實驗室" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">法拉第的電磁實驗室</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-java"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../../simulation/faradays-law.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/html/faradays-law/latest/faradays-law-128.png" id="simulation-display-thumbnail-faradays-law" alt="Screenshot of the simulation Faraday&#39;s Law_法拉第定律" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Faraday&#039;s Law_法拉第定律</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../../simulation/john-travoltage.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/html/john-travoltage/latest/john-travoltage-128.png" id="simulation-display-thumbnail-john-travoltage" alt="Screenshot of the simulation John Travoltage_約翰屈伏塔" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">John Travoltage_約翰屈伏塔</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../../simulation/legacy/radio-waves.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/radio-waves/radio-waves-128.png" id="simulation-display-thumbnail-radio-waves" alt="Screenshot of the simulation Radio Waves &amp; Electromagnetic Fields 無線電波與電磁場" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Radio Waves &amp; Electromagnetic Fields 無線電波與電磁場</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-java"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../../simulation/ohms-law.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/html/ohms-law/latest/ohms-law-128.png" id="simulation-display-thumbnail-ohms-law" alt="Screenshot of the simulation Ohm&#39;s Law_歐姆定律" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Ohm&#039;s Law_歐姆定律</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../../simulation/legacy/battery-voltage.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/battery-voltage/battery-voltage-128.png" id="simulation-display-thumbnail-battery-voltage" alt="Screenshot of the simulation 電池電壓" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">電池電壓</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-java"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../../simulation/legacy/battery-resistor-circuit.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/battery-resistor-circuit/battery-resistor-circuit-128.png" id="simulation-display-thumbnail-battery-resistor-circuit" alt="Screenshot of the simulation 電池-電阻 電路" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">電池-電阻 電路</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-java"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../../simulation/legacy/efield.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/efield/efield-128.png" id="simulation-display-thumbnail-efield" alt="Screenshot of the simulation 電場" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">電場</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-java"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../../simulation/resistance-in-a-wire.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/html/resistance-in-a-wire/latest/resistance-in-a-wire-128.png" id="simulation-display-thumbnail-resistance-in-a-wire" alt="Screenshot of the simulation Resistance in a Wire_電線的電阻" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Resistance in a Wire_電線的電阻</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../../simulation/legacy/conductivity.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/conductivity/conductivity-128.png" id="simulation-display-thumbnail-conductivity" alt="Screenshot of the simulation 導電度" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">導電度</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-java"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../../simulation/legacy/semiconductor.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/semiconductor/semiconductor-128.png" id="simulation-display-thumbnail-semiconductor" alt="Screenshot of the simulation 半導體" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">半導體</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-java"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../../simulation/legacy/circuit-construction-kit-ac-virtual-lab.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/circuit-construction-kit/circuit-construction-kit-ac-virtual-lab-128.png" id="simulation-display-thumbnail-circuit-construction-kit-ac-virtual-lab" alt="Screenshot of the simulation 電路組裝套件(直流電和 交流電),虛擬實驗室" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">電路組裝套件(直流電和 交流電),虛擬實驗室</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-java"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../../simulation/legacy/signal-circuit.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../../sims/signal-circuit/signal-circuit-128.png" id="simulation-display-thumbnail-signal-circuit" alt="Screenshot of the simulation 信號電路" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">信號電路</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-java"></span>
+                    </a>
+                </td>
+            </tr>
+        </table>
+        <br/>
+    </div>
+</div></div>
+  </div>
+</div>
+    </div>
+  </div>
+
+  </div>
+  <div id="react-root"></div>
+
+  <div id="page-footer" class="ltr">
+  <div class="main-footer">
+    <div>
+  
+    <hr>
+    <div id="social-footer" dir="ltr">
+      <span>
+        <a class="footer-link" href="http://www.facebook.com/pages/PhET-Interactive-Simulations/161503243888932?v=wall" rel="external nofollow" title="在 Facebook 按讚" aria-label="在 Facebook 按讚" dir="ltr">
+          <i class="fa fa-facebook"></i>
+        </a>
+      </span><span>
+        <a class="footer-link" href="http://twitter.com/PhETSims" rel="external nofollow" title="在 Twitter 上跟隨我們" aria-label="在 Twitter 上跟隨我們" dir="ltr">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </span><span>
+        <a class="footer-link" href="https://www.instagram.com/phetsims/" rel="external nofollow" title="在 Instagram 跟隨我們" aria-label="在 Instagram 跟隨我們" dir="ltr">
+          <i class="fa fa-instagram"></i>
+        </a>
+      </span><span>
+        <a class="footer-link" href="https://www.youtube.com/channel/UCMRZ0-ci4ifGBF1bJvrcDRQ" rel="external nofollow" title="在 Youtube 上看我們的影片" aria-label="在 Youtube 上看我們的影片" dir="ltr">
+          <i class="fa fa-youtube-play"></i>
+        </a>
+      </span><span>
+        <a class="footer-link" href="http://www.pinterest.com/PhETSims" rel="external nofollow" title="在 Pinterest 跟隨我們" aria-label="在 Pinterest 跟隨我們" dir="ltr">
+          <i class="fa fa-pinterest-p"></i>
+        </a>
+      </span>
+    </div>
+    <hr>
+  
+</div>
+    <div id="footer-nav-links">
+      <div>
+        <a href="../../../about.html"><span class="floating-link">關於 PhET</span></a>
+        <a href="../../../about/team.html"><span class="floating-link">我們的團隊</span></a>
+        <a href="../../../about/sponsors.html"><span class="floating-link">贊助單位</span></a>
+      </div>
+      <div>
+        <a href="https://phet.colorado.edu/zh_TW/offline-access"><span class="floating-link">離線版</span></a>
+        <a href="../../../help-center/getting-started.html"><span class="floating-link">Help Center</span></a>
+        <a href="../../../about/contact.html"><span class="floating-link">聯繫</span></a>
+      </div>
+      <div>
+        <a href="../../../about/source-code.html"><span class="floating-link">原始碼</span></a>
+        <a href="../../../licensing.html"><span class="floating-link">授權</span></a>
+        <a href="../../../for-translators.html"><span class="floating-link">翻譯我們的教學</span></a>
+      </div>
+    </div>
+    <div class="other-languages">
+      <div class="translation-links">
+  
+
+  <span>
+      <a href="electricity-magnets-and-circuits.html"><span class="current-locale">正體中文</span></a>
+  </span><span>
+      <a href="../../../../en/simulations/category/physics/electricity-magnets-and-circuits.html"><span>English</span></a>
+  </span>
+
+  <div style="display: none" id="locale" locale="zh_TW"></div>
+
+
+</div>
+      <div class="translation-credits">本網站及模擬之正體中文部份，由<a href="http://ezgo.westart.tw/">臺灣 PhET 社群</a>進行翻譯與維護<br><br/>請見<a href="http://iychiang1809.blogspot.tw/2015/04/phet.html">翻譯與貢獻者名單</a></div>
+    </div>
+
+    <div id="app-badges">
+      <span>
+  <a href="https://apps.apple.com/tw/app/phet-simulations/id1134126831">
+    <img style="width: 120px;" src="../../../../images/ios-app-store-badges/HKTW(TC)/badge.svg">
+  </a>
+</span>
+      
+    </div>
+
+  </div>
+  <div class="footer-highlight-background">
+    <div class="footer-bottom">
+      <div class="left">
+        <table>
+          <tr>
+            <td class="sponsor">
+              <a href="http://www.hewlett.org/" rel="external" dir="ltr">
+                <img src="../../../../images/support/Hewlett_logo_footer_vv.png"
+                     alt="Hewlett Foundation" width="100" />
+              </a>
+            </td>
+            <td class="sponsor">
+              <a href="http://www.nsf.gov/" rel="external" dir="ltr">
+                <img src="../../../../images/support/NSF_logo_footer-01.png"
+                     alt="National Science Foundation" width="56" />
+              </a>
+            </td>
+            <td class="sponsor">
+              <a href="https://www.google.org/" rel="external" dir="ltr">
+                <img src="../../../../images/support/google.org_dark.png"
+                     alt="Google.org" width="131" />
+              </a>
+            </td>
+            <td class="sponsor">
+              <a href="http://www.moore.org/" rel="external" dir="ltr">
+                <img src="../../../../images/support/Moore_Foundation_logo_footer-01.png"
+                     alt="Moore Foundation" width="100" />
+              </a>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="right">
+        <div id="PhET-logo">
+          <a href="../../../index.html">
+            <img src="../../../../images/phet-logo-trademarked-black.png" alt="PhET Home Page" title="Go to the PhET home page" style="border: none;"
+                 width="90" id="phet-logo-main-image">
+          </a>
+        </div>
+        <div class="copyright">
+          <a href="../../../licensing.html">
+            <span>&copy;<span>2020 University of Colorado. </span></span>
+            <br />
+            部份權利保留
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script type="text/javascript" src="../../../../js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="../../../../js/phet-v50-min.js"></script>
+</div>
+</body>
+
+<!-- Mirrored from phet.colorado.edu/zh_TW/simulations/category/physics/electricity-magnets-and-circuits by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Apr 2020 04:20:46 GMT -->
+</html>
+

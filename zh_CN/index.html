@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:esi="http://java.sun.com/JSP/Page" xml:lang="zh" lang="zh">
+
+<!-- Mirrored from phet.colorado.edu/zh_TW/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Apr 2020 01:36:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>PhET: 自由的线上物理、化学、生物、地球科学及数学模拟教学</title>
+  
+  
+  <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.min-4.7.css">
+  <link rel="stylesheet" type="text/css" href="../css/phet-v77-min.css"/>
+
+  <!-- class edu.colorado.phet.website.content.IndexPage -->
+  <!-- host phet.colorado.edu -->
+  
+
+  
+
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+      rel="stylesheet">
+
+  <script type="text/javascript">
+    function initBreakpoint() {
+      var body = document.querySelector( 'body' );
+      var menuParents = document.querySelectorAll( '#page-nav-menu ul[role=menubar] .nav-menu-parent-text' );
+
+      if ( body && menuParents ) {
+        clearInterval( isLargeViewInterval );
+        window.phet = window.phet || {};
+        window.phet.cssBreakpoint = 40 + // page header container padding
+                                    220 + // phet and cu logos
+                                    75 + // search and user menus
+                                    ( body.className.indexOf( 'rtl' ) >= 0 ? 30 : 0 ) + // RTL languages need to break 30 pixels earlier somehow
+                                    Array.prototype.slice.call( menuParents )
+                                      .map( function( item ) {
+                                        return item.offsetWidth
+                                               - parseInt( window.getComputedStyle( item ).paddingRight )
+                                               - parseInt( window.getComputedStyle( item ).paddingLeft )
+                                               + 22; // 22 is horizontal padding + horizontal margin on nav-menu-parent-text in wide view
+                                      } )
+                                      .reduce( function( accumulator, currentItem ) { return accumulator + currentItem; }, 0 ); // dropdown menu width, flexible due to translations
+        const mediaString = '(min-width: ' + window.phet.cssBreakpoint + 'px)';
+        window.phet.isLargeView = function() {
+          return window.matchMedia( mediaString ).matches;
+        };
+
+        document.getElementById( 'page-wrapper' ).className = window.phet.isLargeView() ? 'wide' : 'narrow';
+        document.getElementById( 'page-header-container-wrapper' ).className = window.phet.isLargeView() ? 'expanded' : 'collapsed';
+      }
+    }
+
+    var isLargeViewInterval = setInterval( initBreakpoint, 50 );
+  </script>
+
+        <meta property="og:site_name" content="PhET"/><meta property="twitter:site" content="@PhETsims"/><meta property="og:title" content="PhET 互动式模拟教学"/><meta property="twitter:title" content="PhET 互动式模拟教学"/><meta property="og:url" content="https://phet.colorado.edu/zh_TW/"/><meta property="twitter:card" content="summary"/><meta property="og:image" content="https://phet.colorado.edu/images/phet-social-media-logo.png"/><meta property="twitter:image" content="https://phet.colorado.edu/images/phet-social-media-logo.png"/><meta property="og:description" content="PhET 是一个延伸教育<a {0}>研究</a>项目计划，透过动画模拟游戏的方式吸引学生探索与发现数学、科学方面的各种知识。它是于 2002 年由诺贝尔经济学奖得主，科罗拉多大学的 Carl Wieman 教授所发起的。"/><meta property="twitter:description" content="PhET 是一个延伸教育<a {0}>研究</a>专案计画，透过动画模拟游戏的方式吸引学生探索与发现数学、科学方面的各种知识。它是于 2002 年由诺贝尔经济学奖得主，科罗拉多大学的 Carl Wieman 教授所发起的。"/>
+    
+    <link rel="stylesheet" href="../footer.css">
+  
+
+  <style type="text/css" id="edu-colorado-phet-website-content-InstallerIndexPanel-0">
+    #page-wrapper #page-content {
+      line-height: inherit;
+      font-family: inherit;
+      font-size: inherit;
+      text-align: center;
+      padding-top: 0;
+    }
+
+    #page-footer .footer-link {
+      height: 0;
+    }
+
+    #page-wrapper.wide #page-nav-menu ul[role=menubar] {
+      top: 0;
+    }
+
+  </style>
+
+
+  <style type="text/css" id="edu-colorado-phet-website-content-InstallerIndexPanel-1">
+    .donate-link {
+      border: 1px solid #e01e5a;
+      background: transparent;
+      font-size: 1em;
+      color: #e01e5a;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      margin: 6px;
+      padding: 5px 6px;
+      transition: 0.2s;
+    }
+
+    .donate-link:hover,
+    .donate-link:focus {
+      color: #ffffff;
+      background: #e01e5a;
+      transition: 0.2s;
+    }
+  </style>
+
+  <style type="text/css" id="edu-colorado-phet-website-content-InstallerIndexPanel-2">
+    .hero-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-image::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: -1;
+    }
+
+    .sim-image::before {
+      content: "";
+      background-image: url("../_m/img/simulations.jpg");
+      filter: brightness(88%);
+    }
+
+    .teachers-image::before {
+      content: "";
+      background-image: url("../_m/img/teachers.jpg");
+    }
+
+    .a11y-image::before {
+      content: "";
+      background-image: url("../_m/img/accessibility.jpg");
+    }
+
+    .title-text-container {
+      max-width: 1220px;
+      margin: auto;
+      text-align: center;
+    }
+
+    h1.title-text {
+      margin: 0 auto;
+      font-size: 2.8em;
+      font-weight: 600;
+      color: #ffffff;
+      max-width: 530px;
+      transition: 0.2s;
+    }
+
+    .teachers-image h1.title-text,
+    .a11y-image h1.title-text {
+      margin: 0;
+      padding-left: 0;
+      font-size: 2.4em;
+    }
+
+    .a11y-image h1.title-text {
+      float: right;
+      max-width: 385px;
+    }
+
+    .teachers-image h1.title-text {
+      max-width: 460px;
+    }
+
+    .a11y-image .float-container {
+      width: 100%;
+      float: right;
+    }
+
+    p.sub-text {
+      color: white;
+      font-weight: 300;
+      max-width: 324px;
+      margin: 20px 0 54px 0;
+    }
+
+    .a11y-image p.sub-text {
+      float: right;
+    }
+
+    a.play-link {
+      display: inline-block;
+      font-size: 1em;
+      color: #ffffff;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 15px;
+      margin: 6px 0;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 2px solid #6acef5;
+      border-radius: 35px;
+      transition: 0.2s;
+    }
+
+    a.play-link:hover {
+      background: #6acef5;
+      color: black;
+    }
+
+    .teachers-image .title-text-container {
+      text-align: left;
+    }
+
+    .a11y-image .title-text-container {
+      text-align: right;
+    }
+
+    .teachers-image a.play-link,
+    .a11y-image a.play-link {
+      padding: 12px;
+      border-radius: 3px;
+    }
+
+    .gradient-container {
+      padding: 100px;
+      display: inline-block;
+    }
+
+    .sim-image .gradient-container {
+      background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4) 31%, rgba(0, 0, 0, 0) 71%);
+      margin: 80px 0;
+    }
+
+    .teachers-image .gradient-container {
+      max-width: 460px;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6) 100px, rgba(0, 0, 0, 0.6) 360px, rgba(0, 0, 0, 0) 660px);
+      transition: 0.2s;
+    }
+
+    .a11y-image .gradient-container {
+      max-width: 385px;
+      float: right;
+      background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 100px, rgba(0, 0, 0, 0.5) 285px, rgba(0, 0, 0, 0) 585px);
+      transition: 0.2s;
+    }
+  </style>
+
+  <style type="text/css" id="edu-colorado-phet-website-content-InstallerIndexPanel-3">
+    .random-sponsor img {
+      max-width: 200px;
+      max-height: 100px;
+      filter: grayscale(100%);
+      display: block;
+      margin: 0 auto;
+    }
+
+    .random-sponsor a:focus img {
+      outline: 2px solid grey;
+    }
+
+    span.random-sponsor-text {
+      font-weight: 300;
+    }
+  </style>
+
+  <style type="text/css" id="edu-colorado-phet-website-content-InstallerIndexPanel-4">
+    #front-page {
+      text-align: center;
+    }
+
+    .container {
+      width: 100%;
+    }
+
+    .background-highlight {
+      background: #f7f4f9;
+    }
+
+    .sims-delivered {
+      padding: 20px;
+    }
+
+    .sims-delivered h1 {
+      font-size: 1em;
+      margin: 0;
+    }
+
+    .sims-delivered span {
+      margin: 0;
+      font-size: 2em;
+      display: inline-block;
+    }
+
+    .sims-delivered span.number {
+      font-weight: 600;
+    }
+
+    .sims-delivered span.string {
+      font-weight: 300;
+    }
+
+    .subjects {
+      max-width: 1020px;
+      display: flex;
+      flex-flow: row wrap;
+      margin: 40px auto;
+    }
+
+    .subject-wrapper {
+      width: 161px;
+      height: 161px;
+      position: relative;
+      margin: auto;
+    }
+
+    .subject-wrapper a {
+      cursor: default;
+      text-decoration: none;
+      color: black;
+      display: block;
+      width: 161px;
+      height: 161px;
+    }
+
+    .subject-wrapper a:focus {
+      outline: 2px solid grey;
+    }
+
+    .subject-wrapper a:before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      width: 111px;
+      height: 111px;
+      padding: 20px;
+      margin: 0;
+      border-radius: 72px;
+      transition: 0.2s linear, outline 0s;
+    }
+
+    .subject-wrapper:hover a:before {
+      filter: brightness(1.03);
+      cursor: pointer;
+      left: 0;
+      top: 0;
+      width: 121px;
+      height: 121px;
+      border-radius: 80px;
+      transition: 0.2s linear;
+    }
+
+    .subject-wrapper h3.text {
+      font-size: 1.1em;
+      font-weight: 500;
+      margin: 0 auto 15px;
+      padding-top: 30px;
+      max-width: 111px;
+      word-break: break-word;
+      text-transform: uppercase;
+      transition: 0.2s linear;
+      position: relative;
+    }
+
+    .subject-wrapper h3.text:hover {
+      cursor: pointer;
+    }
+
+    .subjects .earth-science h3.text {
+      margin: 0 auto 5px;
+      padding-top: 22px;
+    }
+
+    .subject-icon {
+      margin: 0 auto;
+      width: 58px;
+      display: block;
+      position: relative;
+    }
+
+    .subject-wrapper .subject-icon:hover {
+      cursor: pointer;
+    }
+
+    .subject-wrapper.physics a:before {
+      background: #f7cddd;
+    }
+
+    .subject-wrapper.chemistry a:before {
+      background: #d5f3fc;
+    }
+
+    .subject-wrapper.math a:before {
+      background: #fff8cc;
+    }
+
+    .subject-wrapper.earth-science a:before {
+      background: #c9eddd;
+    }
+
+    .subject-wrapper.biology a:before {
+      background: #d9c8de;
+    }
+
+    #interact-discover-learn {
+      display: block;
+      height: 140px;
+      padding: 20px;
+      margin: 24px auto 0 auto;
+    }
+
+    .what-is-phet {
+      max-width: 800px;
+      padding: 20px;
+      margin: 0 auto 20px;
+      font-size: 1.24em;
+      font-weight: 300;
+      line-height: 1.5em;
+      text-align: left;
+    }
+
+    .statistics {
+      max-width: 1020px;
+      display: flex;
+      flex-flow: row wrap;
+      margin: 20px auto;
+    }
+
+    .statistic {
+      max-width: 240px;
+      padding: 20px;
+      margin: auto;
+    }
+
+    .statistic h2 {
+      margin: 0;
+      font-size: 1em;
+    }
+
+    .statistic span {
+      font-size: 1.8em;
+      display: block;
+    }
+
+    .statistic span.number {
+      font-weight: 600;
+    }
+
+    .statistic span.string {
+      font-weight: 300;
+    }
+
+    .statistic img {
+      width: 90px;
+      padding-top: 20px;
+    }
+
+    h3.supported-by {
+      font-size: 1.2em;
+      font-weight: 600;
+      margin: 50px 0 26px 0;
+    }
+
+    p.other-sponsors {
+      font-size: 1em;
+      font-weight: 300;
+      max-width: 220px;
+      margin: 26px auto 16px auto;
+    }
+
+    @media (max-width: 1020px) {
+      .title-text-container {
+        max-width: 1020px;
+      }
+
+      .teachers-image .gradient-container {
+        padding-left: 20px;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) 260px, rgba(0, 0, 0, 0) 580px);
+        transition: 0.2s;
+      }
+
+      .a11y-image .gradient-container {
+        padding-right: 20px;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 185px, rgba(0, 0, 0, 0) 505px);
+        transition: 0.2s;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .sim-image .gradient-container {
+        padding: 100px 20px;
+        background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4) 37%, rgba(0, 0, 0, 0) 71%);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .sim-image .gradient-container,
+      .teachers-image .gradient-container,
+      .a11y-image .gradient-container {
+        padding: 100px 20px;
+        background: none;
+        transition: 0.2s;
+      }
+
+      .sim-image::before {
+        filter: brightness(55%);
+      }
+
+      .teachers-image::before {
+        filter: brightness(40%);
+        background-position: right;
+      }
+
+      .a11y-image::before {
+        filter: brightness(56%);
+        background-position: right;
+      }
+    }
+  </style>
+</head>
+<body dir="ltr" class="ltr" id="offline-installer-body">
+<div id="page-wrapper" class="pre-load">
+  <div id="skipNav">
+    <a href="#main-content" accesskey="0" id="skipper" tabindex="1">
+      跳至主页
+    </a>
+  </div>
+
+  
+
+  <div id="page-header" class="ltr">
+
+    
+
+    <div id="page-header-container-wrapper">
+      <div id="page-header-container" role="banner">
+        <div id="page-header-left">
+          <a href="index.html" class="phet-logo-link">
+            <div class="phet-logo">
+              <img src="../images/phet-logo-trademarked.png"
+                   alt="PhET Home Page"
+                   title="Go to the PhET home page"
+              />
+            </div>
+          </a>
+          <div class="cu-logo">
+            <a href="http://www.colorado.edu/" target="_blank">
+              <div class="cu-logo-image-clip">
+                <img src="../images/logos/cu_logo.png" alt="University of Colorado"/>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <a id="collapsible-menu-toggle" role="button" aria-haspopup="menu" aria-expanded="false" aria-label="切换主选单">
+          <div id="toggle-container">
+          <span id="nw-rotate" class="rotate">
+            <span id="nw-translate" class="line"></span>
+          </span>
+            <span id="ne-rotate" class="rotate">
+            <span id="ne-translate" class="line"></span>
+          </span>
+            <span id="sw-rotate" class="rotate">
+            <span id="sw-translate" class="line"></span>
+          </span>
+            <span id="se-rotate" class="rotate">
+            <span id="se-translate" class="line"></span>
+          </span>
+            <span id="east-center-line" class="line center-line"></span>
+            <span id="west-center-line" class="line center-line"></span>
+          </div>
+        </a>
+
+        <div id="page-header-menus" class="ltr">
+          <div id="collapsible-menu">
+            <div id="search-container-mobile" role="search"></div>
+            <nav id="page-nav-menu" role="navigation">
+  <ul role="menubar">
+    <li class="nav-menu-item">
+      <a class="nav-menu-parent has-menu nav0" role="menuitem" id="nav.simulations" aria-haspopup="menu" aria-expanded="false">
+        <span class="nav-menu-parent-text">教学</span></a>
+      <div class="nav-menu-children">
+        <ul role="menu" aria-labelledby="nav.simulations">
+          <li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-new" href="simulations/category/new.html">
+            <span class="nav-menu-child-text">新加入的教学主题</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-html" href="simulations/category/html.html">
+            <span class="nav-menu-child-text">HTML5</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-physics" href="simulations/category/physics.html">
+            <span class="nav-menu-child-text">物理</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-biology" href="simulations/category/biology.html">
+            <span class="nav-menu-child-text">生物</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-chemistry" href="simulations/category/chemistry.html">
+            <span class="nav-menu-child-text">化学</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-earth-science" href="simulations/category/earth-science.html">
+            <span class="nav-menu-child-text">地球科学</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-math" href="simulations/category/math.html">
+            <span class="nav-menu-child-text">数学</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-by-level" href="simulations/category/by-level.html">
+            <span class="nav-menu-child-text">依年级区分教学主题</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-by-device" href="simulations/category/by-device.html">
+            <span class="nav-menu-child-text">依装置区分</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-all" href="simulations.html">
+            <span class="nav-menu-child-text">所有的教学主题</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-simulations-translated" href="simulations/translated.html">
+            <span class="nav-menu-child-text">翻译教学主题</span></a></li>
+        </ul>
+      </div>
+    </li><li class="nav-menu-item">
+      <a class="nav-menu-parent has-menu nav0" role="menuitem" id="nav.teaching" aria-haspopup="menu" aria-expanded="false">
+        <span class="nav-menu-parent-text">活动</span></a>
+      <div class="nav-menu-children">
+        <ul role="menu" aria-labelledby="nav.teaching">
+          <li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-about-general" href="teaching-resources.html">
+            <span class="nav-menu-child-text">关于</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-forTeachers-tipsForUsingPhet" href="teaching-resources/tipsForUsingPhet.html">
+            <span class="nav-menu-child-text">使用 PhET 的小提示</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-teacherIdeas-browse" href="https://phet.colorado.edu/zh_TW/teaching-resources/browse-activities">
+            <span class="nav-menu-child-text">浏览活动</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-teacherIdeas-submit" href="https://phet.colorado.edu/zh_TW/teaching-resources/submit-activity">
+            <span class="nav-menu-child-text">分享您的活动</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-teacherIdeas-manage" href="https://phet.colorado.edu/zh_TW/teaching-resources/manage-activities">
+            <span class="nav-menu-child-text">我的活动</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-workshops" href="teaching-resources/workshops.html">
+            <span class="nav-menu-child-text">研习</span></a></li>
+        </ul>
+      </div>
+    </li><li class="nav-menu-item">
+      <a class="nav-menu-parent nav0" role="menuitem" href="research.html">
+        <span class="nav-menu-parent-text">研究</span></a>
+      <div class="nav-menu-children empty">
+        
+      </div>
+    </li><li class="nav-menu-item">
+      <a class="nav-menu-parent has-menu nav0" role="menuitem" id="nav.accessibility" aria-haspopup="menu" aria-expanded="false">
+        <span class="nav-menu-parent-text">无障碍辅助</span></a>
+      <div class="nav-menu-children">
+        <ul role="menu" aria-labelledby="nav.accessibility">
+          <li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-about-general" href="accessibility.html">
+            <span class="nav-menu-child-text">关于</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-accessibility-simulations" href="accessibility/prototypes.html">
+            <span class="nav-menu-child-text">可使用的模拟教材</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-accessibility-research" href="accessibility/research.html">
+            <span class="nav-menu-child-text">研究与设计</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-accessibility-implementation" href="accessibility/implementation.html">
+            <span class="nav-menu-child-text">技术实作</span></a></li>
+        </ul>
+      </div>
+    </li><li class="nav-menu-item featured">
+      <a class="nav-menu-parent nav0" role="menuitem" href="donate.html">
+        <span class="nav-menu-parent-text">赞助我们</span></a>
+      <div class="nav-menu-children empty">
+        
+      </div>
+    </li>
+  </ul>
+
+</nav>
+            <div id="search" role="search">
+              
+              <div id="search-container-desktop" class="search-hidden"></div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--This is a temporary placeholder-->
+  <div style="display: none;">
+    
+  </div>
+
+  <div>此版本于 2020/4/27 建立。更新程式可以从<a href="https://phet.colorado.edu/zh_TW/offline-access">网站上</a>取得。</div>
+
+  <div id="page-content" role="main" class="ltr">
+    
+  
+  
+  <div>
+  <div id="react-root" role="main">
+    <div>
+      <div class="container">
+        <div class="hero-image sim-image">
+          <div class="title-text-container">
+            <div class="gradient-container">
+              <h1 class="title-text">
+                科学与数学的互动式模拟教材
+              </h1>
+              <div class="float-container">
+                <a class="play-link" href="simulations.html">
+                开始玩教学
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container background-highlight">
+        <div class="sims-delivered">
+          <h1>
+            <span class="number">已有 658 百万人次</span>
+            <span class="string">
+              玩过我们的模拟教材了！
+            </span>
+          </h1>
+        </div>
+      </div>
+      <div class="container">
+        <div class="subjects">
+          <div class="subject-wrapper physics"><a href="simulations/category/physics.html">
+            <h3 class="text">
+              物理
+            </h3>
+            <img id="physics-icon" class="subject-icon" src="../_m/img/physics-icon.png"></a></div>
+          <div class="subject-wrapper chemistry"><a href="simulations/category/chemistry.html">
+            <h3 class="text">
+              化学
+            </h3>
+            <img id="chemistry-icon" class="subject-icon" src="../_m/img/chemistry-icon.png"></a>
+          </div>
+          <div class="subject-wrapper math"><a href="simulations/category/math.html">
+            <h3 class="text">
+              数学
+            </h3>
+            <img id="math-icon" class="subject-icon" src="../_m/img/math-icon.png"></a></div>
+          <div class="subject-wrapper earth-science"><a href="simulations/category/earth-science.html">
+            <h3 class="text">
+              地球科学
+            </h3>
+            <img id="earth-science-icon" class="subject-icon" src="../_m/img/earth-science-icon.png"></a></div>
+          <div class="subject-wrapper biology"><a href="simulations/category/biology.html">
+            <h3 class="text">
+              生物
+            </h3>
+            <img id="biology-icon" class="subject-icon" src="../_m/img/biology-icon.png"></a></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="hero-image teachers-image">
+          <div class="title-text-container">
+            <div class="gradient-container">
+              <h1 class="title-text">
+                教学资源、活动与社群
+              </h1>
+              <div class="float-container">
+                <p class="sub-text">
+                  教师们可以看到跟模拟教材有关的教学提示、影片说明、教案资源，还有我们的教师社群所分享的活动等等。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container"><img id="interact-discover-learn" src="../_m/img/interact-discover-learn.png" alt="互动、探索、学习！"></div>
+      <div class="container background-highlight">
+        <div class="statistics">
+          <div class="statistic">
+            <h2>
+              <span class="number">154</span>
+              <span class="string">互动式模拟教材</span>
+            </h2>
+            <img src="../_m/img/interactive-icon.png">
+          </div>
+          <div class="statistic">
+            <h2>
+              <span class="number">98</span>
+              <span class="string">语言翻译</span>
+            </h2>
+            <img src="../_m/img/languages-icon.png">
+          </div>
+          <div class="statistic">
+            <h2>
+              <span class="number">1994</span>
+              <span class="string">教师投稿的教案</span>
+            </h2>
+            <img src="../_m/img/lessons-icon.png">
+          </div>
+        </div>
+      </div>
+      <div class="container"><p class="what-is-phet">PhET 是一个延伸教育<a href="research.html">研究</a>专案计画，透过动画模拟游戏的方式吸引学生探索与发现数学、科学方面的各种知识。它是于 2002 年由诺贝尔经济学奖得主，科罗拉多大学的 Carl Wieman 教授所发起的。</p></div>
+      <div class="container">
+        <div class="hero-image a11y-image">
+          <div class="title-text-container">
+            <div class="gradient-container">
+              <h1 class="title-text">
+                能让所有学生体验科学、技术、工程、数学（STEM）不是很好吗？
+              </h1>
+              <div class="float-container">
+                <p class="sub-text">
+                  了解我们如何应对 STEM 教育，软体开发和辅助科技方面的挑战。
+                </p>
+              </div>
+              <div class="float-container">
+                <a class="play-link" href="accessibility/prototypes.html">
+                  探索辅助模拟教材
+                </a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script type="text/javascript">
+    var cleverInterval = setInterval( function() {
+      if ( typeof $ !== 'undefined' ) {
+        clearInterval( cleverInterval );
+        $( document ).ready( function() {
+          if ( window.location.pathname.includes( "clever" ) ) {
+            window.history.pushState( null, null, "../index.html" );
+          }
+        } );
+      }
+    }, 100 );
+  </script>
+
+  </div>
+  <div id="react-root"></div>
+
+  <div id="page-footer" class="ltr">
+  <div class="main-footer">
+    <div>
+  
+    <hr>
+    <div id="social-footer" dir="ltr">
+      <span>
+        <a class="footer-link" href="http://www.facebook.com/pages/PhET-Interactive-Simulations/161503243888932?v=wall" rel="external nofollow" title="在 Facebook 按赞" aria-label="在 Facebook 按赞" dir="ltr">
+          <i class="fa fa-facebook"></i>
+        </a>
+      </span><span>
+        <a class="footer-link" href="http://twitter.com/PhETSims" rel="external nofollow" title="在 Twitter 上跟随我们" aria-label="在 Twitter 上跟随我们" dir="ltr">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </span><span>
+        <a class="footer-link" href="https://www.instagram.com/phetsims/" rel="external nofollow" title="在 Instagram 跟随我们" aria-label="在 Instagram 跟随我们" dir="ltr">
+          <i class="fa fa-instagram"></i>
+        </a>
+      </span><span>
+        <a class="footer-link" href="https://www.youtube.com/channel/UCMRZ0-ci4ifGBF1bJvrcDRQ" rel="external nofollow" title="在 Youtube 上看我们的影片" aria-label="在 Youtube 上看我们的影片" dir="ltr">
+          <i class="fa fa-youtube-play"></i>
+        </a>
+      </span><span>
+        <a class="footer-link" href="http://www.pinterest.com/PhETSims" rel="external nofollow" title="在 Pinterest 跟随我们" aria-label="在 Pinterest 跟随我们" dir="ltr">
+          <i class="fa fa-pinterest-p"></i>
+        </a>
+      </span>
+    </div>
+    <hr>
+  
+</div>
+    <div id="footer-nav-links">
+      <div>
+        <a href="about.html"><span class="floating-link">关于 PhET</span></a>
+        <a href="about/team.html"><span class="floating-link">我们的团队</span></a>
+        <a href="about/sponsors.html"><span class="floating-link">赞助单位</span></a>
+      </div>
+      <div>
+        <a href="https://phet.colorado.edu/zh_TW/offline-access"><span class="floating-link">离线版</span></a>
+        <a href="help-center/getting-started.html"><span class="floating-link">Help Center</span></a>
+        <a href="about/contact.html"><span class="floating-link">联系</span></a>
+      </div>
+      <div>
+        <a href="about/source-code.html"><span class="floating-link">原始码</span></a>
+        <a href="licensing.html"><span class="floating-link">授权</span></a>
+        <a href="for-translators.html"><span class="floating-link">翻译我们的教学</span></a>
+      </div>
+    </div>
+    <div class="other-languages">
+      <div class="translation-links">
+  
+  <span>
+      <a href="index.html"><span>简体中文</span></a>
+  </span>
+  <span>
+      <a href="../zh_TW/index.html"><span class="current-locale">正體中文</span></a>
+  </span><span>
+      <a href="../en/index.html"><span>English</span></a>
+  </span>
+
+  <div style="display: none" id="locale" locale="zh_CN"></div>
+
+
+</div>
+      <div class="translation-credits">本网站及模拟之正體中文部份，由<a href="http://ezgo.westart.tw/">台湾 PhET 社群</a>进行翻译与维护，简体中文部分，由<a href="https://oef.org.cn/credits-phet/">PhET 简体中文项目组</a>和<a href="https://ezgolinux.org">ezgoChina 社群</a>进行翻译与维护。<br><br/>请见<a href="http://iychiang1809.blogspot.tw/2015/04/phet.html">翻译与贡献者名单</a></div>
+    </div>
+
+    <div id="app-badges">
+      <span>
+  <a href="https://apps.apple.com/tw/app/phet-simulations/id1134126831">
+    <img style="width: 120px;" src="../images/ios-app-store-badges/HKTW(TC)/badge.svg">
+  </a>
+</span>
+      
+    </div>
+
+  </div>
+  <div class="footer-highlight-background">
+    <div class="footer-bottom">
+      <div class="left">
+        <table>
+          <tr>
+            <td class="sponsor">
+              <a href="http://www.hewlett.org/" rel="external" dir="ltr">
+                <img src="../images/support/Hewlett_logo_footer_vv.png"
+                     alt="Hewlett Foundation" width="100" />
+              </a>
+            </td>
+            <td class="sponsor">
+              <a href="http://www.nsf.gov/" rel="external" dir="ltr">
+                <img src="../images/support/NSF_logo_footer-01.png"
+                     alt="National Science Foundation" width="56" />
+              </a>
+            </td>
+            <td class="sponsor">
+              <a href="https://www.google.org/" rel="external" dir="ltr">
+                <img src="../images/support/google.org_dark.png"
+                     alt="Google.org" width="131" />
+              </a>
+            </td>
+            <td class="sponsor">
+              <a href="http://www.moore.org/" rel="external" dir="ltr">
+                <img src="../images/support/Moore_Foundation_logo_footer-01.png"
+                     alt="Moore Foundation" width="100" />
+              </a>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="right">
+        <div id="PhET-logo">
+          <a href="index.html">
+            <img src="../images/phet-logo-trademarked-black.png" alt="PhET Home Page" title="Go to the PhET home page" style="border: none;"
+                 width="90" id="phet-logo-main-image">
+          </a>
+        </div>
+        <div class="copyright">
+          <a href="licensing.html">
+            <span>&copy;<span>2020 University of Colorado. </span></span>
+            <br />
+            部份权利保留
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/phet-v50-min.js"></script>
+</div>
+</body>
+
+<!-- Mirrored from phet.colorado.edu/zh_TW/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Apr 2020 01:36:26 GMT -->
+</html>

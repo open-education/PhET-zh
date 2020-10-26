@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:esi="http://java.sun.com/JSP/Page" xml:lang="zh" lang="zh">
+
+<!-- Mirrored from phet.colorado.edu/zh_TW/licensing/html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Apr 2020 04:27:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>HTML5 模拟的授权资讯</title>
+  
+  
+  <link rel="stylesheet" href="../../css/font-awesome/css/font-awesome.min-4.7.css">
+  <link rel="stylesheet" type="text/css" href="../../css/phet-v77-min.css"/>
+
+  <!-- class edu.colorado.phet.website.templates.StaticPage -->
+  <!-- host phet.colorado.edu -->
+  
+
+  
+
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+      rel="stylesheet">
+
+  <script type="text/javascript">
+    function initBreakpoint() {
+      var body = document.querySelector( 'body' );
+      var menuParents = document.querySelectorAll( '#page-nav-menu ul[role=menubar] .nav-menu-parent-text' );
+
+      if ( body && menuParents ) {
+        clearInterval( isLargeViewInterval );
+        window.phet = window.phet || {};
+        window.phet.cssBreakpoint = 40 + // page header container padding
+                                    220 + // phet and cu logos
+                                    75 + // search and user menus
+                                    ( body.className.indexOf( 'rtl' ) >= 0 ? 30 : 0 ) + // RTL languages need to break 30 pixels earlier somehow
+                                    Array.prototype.slice.call( menuParents )
+                                      .map( function( item ) {
+                                        return item.offsetWidth
+                                               - parseInt( window.getComputedStyle( item ).paddingRight )
+                                               - parseInt( window.getComputedStyle( item ).paddingLeft )
+                                               + 22; // 22 is horizontal padding + horizontal margin on nav-menu-parent-text in wide view
+                                      } )
+                                      .reduce( function( accumulator, currentItem ) { return accumulator + currentItem; }, 0 ); // dropdown menu width, flexible due to translations
+        const mediaString = '(min-width: ' + window.phet.cssBreakpoint + 'px)';
+        window.phet.isLargeView = function() {
+          return window.matchMedia( mediaString ).matches;
+        };
+
+        document.getElementById( 'page-wrapper' ).className = window.phet.isLargeView() ? 'wide' : 'narrow';
+        document.getElementById( 'page-header-container-wrapper' ).className = window.phet.isLargeView() ? 'expanded' : 'collapsed';
+      }
+    }
+
+    var isLargeViewInterval = setInterval( initBreakpoint, 50 );
+  </script>
+
+        <meta property="og:site_name" content="PhET"/><meta property="twitter:site" content="@PhETsims"/><meta property="og:title" content="PhET Interactive Simulations: HTML Licensing"/><meta property="twitter:title" content="PhET Interactive Simulations: HTML Licensing"/><meta property="og:url" content="https://phet.colorado.edu/zh_TW/licensing/html"/><meta property="twitter:card" content="summary"/><meta property="og:image" content="https://phet.colorado.edu/images/phet-social-media-logo.png"/><meta property="twitter:image" content="https://phet.colorado.edu/images/phet-social-media-logo.png"/><meta property="og:description" content="Educational simulations from PhET Interactive Simulations, University of Colorado"/><meta property="twitter:description" content="Educational simulations from PhET Interactive Simulations, University of Colorado"/>
+    
+    <link rel="stylesheet" href="../../footer.css">
+  </head>
+<body dir="ltr" class="ltr" id="offline-installer-body">
+<div id="page-wrapper" class="pre-load">
+  <div id="skipNav">
+    <a href="#main-content" accesskey="0" id="skipper" tabindex="1">
+      跳至主页
+    </a>
+  </div>
+
+  
+
+  <div id="page-header" class="ltr">
+
+    
+
+    <div id="page-header-container-wrapper">
+      <div id="page-header-container" role="banner">
+        <div id="page-header-left">
+          <a href="../index.html" class="phet-logo-link">
+            <div class="phet-logo">
+              <img src="../../images/phet-logo-trademarked.png"
+                   alt="PhET Home Page"
+                   title="Go to the PhET home page"
+              />
+            </div>
+          </a>
+          <div class="cu-logo">
+            <a href="http://www.colorado.edu/" target="_blank">
+              <div class="cu-logo-image-clip">
+                <img src="../../images/logos/cu_logo.png" alt="University of Colorado"/>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <a id="collapsible-menu-toggle" role="button" aria-haspopup="menu" aria-expanded="false" aria-label="切换主选单">
+          <div id="toggle-container">
+          <span id="nw-rotate" class="rotate">
+            <span id="nw-translate" class="line"></span>
+          </span>
+            <span id="ne-rotate" class="rotate">
+            <span id="ne-translate" class="line"></span>
+          </span>
+            <span id="sw-rotate" class="rotate">
+            <span id="sw-translate" class="line"></span>
+          </span>
+            <span id="se-rotate" class="rotate">
+            <span id="se-translate" class="line"></span>
+          </span>
+            <span id="east-center-line" class="line center-line"></span>
+            <span id="west-center-line" class="line center-line"></span>
+          </div>
+        </a>
+
+        <div id="page-header-menus" class="ltr">
+          <div id="collapsible-menu">
+            <div id="search-container-mobile" role="search"></div>
+            <nav id="page-nav-menu" role="navigation">
+  <ul role="menubar">
+    <li class="nav-menu-item">
+      <a class="nav-menu-parent has-menu nav0" role="menuitem" id="nav.simulations" aria-haspopup="menu" aria-expanded="false">
+        <span class="nav-menu-parent-text">教学</span></a>
+      <div class="nav-menu-children">
+        <ul role="menu" aria-labelledby="nav.simulations">
+          <li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-new" href="../simulations/category/new.html">
+            <span class="nav-menu-child-text">新加入的教学主题</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-html" href="../simulations/category/html.html">
+            <span class="nav-menu-child-text">HTML5</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-physics" href="../simulations/category/physics.html">
+            <span class="nav-menu-child-text">物理</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-biology" href="../simulations/category/biology.html">
+            <span class="nav-menu-child-text">生物</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-chemistry" href="../simulations/category/chemistry.html">
+            <span class="nav-menu-child-text">化学</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-earth-science" href="../simulations/category/earth-science.html">
+            <span class="nav-menu-child-text">地球科学</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-math" href="../simulations/category/math.html">
+            <span class="nav-menu-child-text">数学</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-by-level" href="../simulations/category/by-level.html">
+            <span class="nav-menu-child-text">依年级区分教学主题</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-by-device" href="../simulations/category/by-device.html">
+            <span class="nav-menu-child-text">依装置区分</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-all" href="../simulations.html">
+            <span class="nav-menu-child-text">所有的教学主题</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-simulations-translated" href="../simulations/translated.html">
+            <span class="nav-menu-child-text">翻译教学主题</span></a></li>
+        </ul>
+      </div>
+    </li><li class="nav-menu-item">
+      <a class="nav-menu-parent has-menu nav0" role="menuitem" id="nav.teaching" aria-haspopup="menu" aria-expanded="false">
+        <span class="nav-menu-parent-text">教学</span></a>
+      <div class="nav-menu-children">
+        <ul role="menu" aria-labelledby="nav.teaching">
+          <li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-about-general" href="../teaching-resources.html">
+            <span class="nav-menu-child-text">关于</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-forTeachers-tipsForUsingPhet" href="../teaching-resources/tipsForUsingPhet.html">
+            <span class="nav-menu-child-text">使用 PhET 的小提示</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-teacherIdeas-browse" href="https://phet.colorado.edu/zh_TW/teaching-resources/browse-activities">
+            <span class="nav-menu-child-text">浏览活动</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-teacherIdeas-submit" href="https://phet.colorado.edu/zh_TW/teaching-resources/submit-activity">
+            <span class="nav-menu-child-text">分享您的活动</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-teacherIdeas-manage" href="https://phet.colorado.edu/zh_TW/teaching-resources/manage-activities">
+            <span class="nav-menu-child-text">我的活动</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-workshops" href="../teaching-resources/workshops.html">
+            <span class="nav-menu-child-text">研习</span></a></li>
+        </ul>
+      </div>
+    </li><li class="nav-menu-item">
+      <a class="nav-menu-parent nav0" role="menuitem" href="../research.html">
+        <span class="nav-menu-parent-text">研究</span></a>
+      <div class="nav-menu-children empty">
+        
+      </div>
+    </li><li class="nav-menu-item">
+      <a class="nav-menu-parent has-menu nav0" role="menuitem" id="nav.accessibility" aria-haspopup="menu" aria-expanded="false">
+        <span class="nav-menu-parent-text">无障碍辅助</span></a>
+      <div class="nav-menu-children">
+        <ul role="menu" aria-labelledby="nav.accessibility">
+          <li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-about-general" href="../accessibility.html">
+            <span class="nav-menu-child-text">关于</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-accessibility-simulations" href="../accessibility/prototypes.html">
+            <span class="nav-menu-child-text">可使用的模拟教材</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-accessibility-research" href="../accessibility/research.html">
+            <span class="nav-menu-child-text">研究与设计</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-accessibility-implementation" href="../accessibility/implementation.html">
+            <span class="nav-menu-child-text">技术实作</span></a></li>
+        </ul>
+      </div>
+    </li><li class="nav-menu-item featured">
+      <a class="nav-menu-parent nav0" role="menuitem" href="../donate.html">
+        <span class="nav-menu-parent-text">赞助我们</span></a>
+      <div class="nav-menu-children empty">
+        
+      </div>
+    </li>
+  </ul>
+
+</nav>
+            <div id="search" role="search">
+              
+              <div id="search-container-desktop" class="search-hidden"></div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--This is a temporary placeholder-->
+  <div style="display: none;">
+    
+  </div>
+
+  <div>此版本于 2020/4/27 建立。更新程式可以从<a href="https://phet.colorado.edu/zh_TW/offline-access">网站上</a>取得。</div>
+
+  <div id="page-content" role="main" class="ltr">
+    
+    <div>
+  <div class="licensing-panel standard-content">
+
+    <h1 id="agreement-header" class="bold center">
+      PhET SOFTWARE AGREEMENT<br/>
+      Terms of Use and Privacy Policy for PhET's collection of HTML Simulations<br/>
+      (Version 2)<br/>
+      University of Colorado Boulder<br/>
+    </h1>
+
+    <div id="agreement-index" class="section">
+      <p>
+        In this document:
+      </p>
+      <ol type="I">
+        <li><a href="#agreement-I">
+          Overview
+        </a>
+        </li>
+        <li><a href="#agreement-II">
+          Software License Information
+        </a></li>
+
+        <ol type="A">
+          <li><a href="#agreement-II-A">
+            'PhET Regular HTML Simulation File': Creative Commons Attribution 4.0
+          </a></li>
+          <li><a href="#agreement-II-B">
+            'PhET Interoperable HTML Simulation File': Contact PhET for Licensing Information
+          </a></li>
+          <li><a href="#agreement-II-C">
+            'PhET HTML Simulation Source Code': GNU General Public License Version 3
+          </a></li>
+          <li><a href="#agreement-II-D">
+            'PhET HTML Common Source Code': MIT License
+          </a></li>
+          <li><a href="#agreement-II-E">
+            'PHET Interoperable HTML Source Code': Contact PhET for Licensing Information
+          </a></li>
+          <li><a href="#agreement-II-F">
+            Donations
+          </a></li>
+          <li><a href="#agreement-II-G">
+            Third Party Software Credits
+          </a></li>
+          <li><a href="#agreement-II-H">
+            Alternative Licensing Options
+          </a></li>
+        </ol>
+        <li><a href="#agreement-III">
+          PhET Name and Logo Trademark
+        </a></li>
+        <li><a href="#agreement-IV">
+          Privacy Policy
+        </a></li>
+        <ol type="A">
+          <li><a href="#agreement-IV-A">
+            Commitment to Individual Privacy
+          </a></li>
+          <li><a href="#agreement-IV-B">
+            Information Collected
+          </a></li>
+          <li><a href="#agreement-IV-C">
+            Information Security
+          </a></li>
+          <li><a href="#agreement-IV-D">
+            Information Sharing
+          </a></li>
+          <li><a href="#agreement-IV-E">
+            Colorado Open Records Act
+          </a></li>
+          <li><a href="#agreement-IV-F">
+            Additional privacy terms apply when PhET is used with the Microsoft Office Mix Service
+          </a></li>
+          <li><a href="#agreement-IV-F">
+            Additional privacy terms apply for PhET Interoperable HTML Simulation Files
+          </a></li>
+        </ol>
+        <li><a href="#agreement-V">
+          Disclaimer
+        </a></li>
+        <li><a href="#agreement-VI">
+          Contact Us
+        </a></li>
+      </ol>
+    </div>
+
+    <div id="agreement-I" class="section">
+      <h2>
+        I. OVERVIEW
+      </h2>
+
+      <p>
+        This PhET Software Agreement ("<b>Agreement</b>") pertains to the collection of HTML simulations developed by the PhET Interactive
+        Simulations Project at the University of Colorado Boulder ("<b>PhET</b>"). PhET offers five different software licensing options,
+        which are detailed in Section II(A), II(B), II(C), II(D) and II(E) below, to the users of its HTML simulations.
+      </p>
+
+      <p>
+        This Agreement and the licenses specified below do <i>not</i> permit the licensing of PhET's Java or Flash simulations. Information
+        regarding PhET's Java or Flash simulations is available at <a href="../../index.html">https://phet.colorado.edu</a>.
+      </p>
+    </div>
+
+    <div id="agreement-II" class="section">
+      <h2>
+        II. SOFTWARE LICENSE OPTIONS
+      </h2>
+
+      <h3 id="agreement-II-A">
+        A. PhET Regular HTML Simulation File: Creative Commons Attribution 4.0
+      </h3>
+
+      <p class="top-paragraph">
+        <b>"PhET Regular HTML Simulation File"</b> means an individual minified HTML simulation file where PhET HTML Simulation Source Code
+        (PhET HTML Simulation Source Code is defined below) assets and PhET HTML Common Source Code (PhET HTML Common Source Code is defined
+        below) assets are combined into a single, minified HTML file that can be run in a browser, or downloaded and launched, without any
+        other requirements.
+      </p>
+
+      <p>
+        PhET licenses PhET Regular HTML Simulation Files individually under a
+        <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 License</a>
+        ("<b>CC BY 4.0</b>"). The full text of the Creative Commons Attribution 4.0 license is available here:
+        <a href="http://creativecommons.org/licenses/by/4.0/legalcode" target="_blank">http://creativecommons.org/licenses/by/4.0/legalcode</a>.
+      </p>
+
+      <p>
+        The collection of PhET Regular HTML Simulation Files are available to run or download from
+        <a href="../../index.html">https://phet.colorado.edu</a>.
+      </p>
+
+      <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">
+        <img src="../../images/license-logos/cc-license.png" alt="Creative Commons License"/>
+      </a>
+
+
+      <p class="ignore bold slant">
+        What does the CC BY 4.0 License mean?
+      </p>
+
+      <p class="top-paragraph">
+        PhET Regular HTML Simulation Files may be freely used and/or redistributed by third parties (e.g. students, educators, school
+        districts, museums, publishers, vendors, etc.) for non-commercial or commercial purposes.
+      </p>
+
+      <p>
+        Any use of a PhET Regular HTML Simulation File under the CC BY 4.0 requires the following attribution: "PhET Interactive
+        Simulations, University of Colorado Boulder, <a href="../../index.html">https://phet.colorado.edu</a>."
+      </p>
+
+      <p>
+        The CC-BY-4.0 license does <i>not</i>apply to the PhET name and PhET logo, which are trademarks of The Regents of the University of Colorado,
+        a body corporate. See Section III below for additional information regarding how to use legally the PhET name and logo.
+      </p>
+
+      <h3 id="agreement-II-B">
+        B. 'PhET Interoperable HTML Simulation File': Contact PhET for Licensing Information
+      </h3>
+
+      <p class="top-paragraph">
+        <b>"PhET Interoperable HTML Simulation File"</b> means an individual minified HTML simulation file where PhET HTML Simulation Source Code
+        assets, PhET HTML Common Source Code assets, and PhET Interoperable HTML Source Code (PhET Interoperable HTML Source Code is defined below)
+        assets are combined into a single, minified HTML file. PhET Interoperable HTML Simulation Files provide additional capabilities not included
+        in PhET Regular HTML Simulation Files. Additional capabilities include, by way of example, an application programming interface (API) or
+        back-end data capabilities.
+      </p>
+
+      <p>
+        PhET Interoperable HTML Simulation Files are licensed through individual agreements. ANY USE OF PHET INTEROPERABLE HTML SIMULATION FILES
+        IS STRICTLY PROHIBITED WITHOUT A LICENSE. Please contact <a href="mailto:phethelp@colorado.edu">phethelp@colorado.edu</a>
+        to inquire about licensing.
+      </p>
+
+      <h3 id="agreement-II-C">
+        C. 'PhET HTML Simulation Source Code': GNU General Public License Version 3
+      </h3>
+
+      <p class="top-paragraph">
+        <b>"PhET HTML Simulation Source Code"</b> is the collection of original simulation specific assets used by a PhET simulation, including but
+        not limited to source code (JavaScript/HTML/CSS), images, audio and text.
+      </p>
+
+      <p>
+        PhET licenses PhET HTML Simulation Source Code under the <a href="https://www.gnu.org/licenses/gpl.html" target="_blank">GNU General Public
+        License Version 3</a> ("<b>GPLv3</b>"). The full text of the GPLv3 is available here:
+        <a href="https://www.gnu.org/licenses/gpl.html" target="_blank">https://www.gnu.org/licenses/gpl.html</a>
+      </p>
+
+      <p>
+        The simulation-specific PhET HTML Simulation Source Code repositories can be accessed at
+        <a href="http://github.com/phetsims" target="_blank">http://github.com/phetsims</a>.
+        The license file within the specific PhET HTML Simulation Source Code repository specifies whether it is available under the
+        GPLv3.
+      </p>
+
+      <a href="http://www.gnu.org/licenses/gpl.html" target="_blank">
+        <img src="../../images/license-logos/gpl-v3.png" alt="GPLv3 License"/>
+      </a>
+
+      <p class="ignore bold slant">
+        What does the GPLv3 mean?
+      </p>
+
+      <p class="top-paragraph">
+        The simulation-specific source code for each PhET HTML Simulation Source Code is available for use and/or modification. Anyone may access
+        to the source code and make modifications. If a user makes any changes whatsoever to the source code of the software, then the changes
+        must be made publicly available by the party that makes the changes.
+      </p>
+
+      <h3 id="agreement-II-D">
+        D. 'PhET HTML Common Source Code': MIT License
+      </h3>
+
+      <p class="top-paragraph">
+        <b>"PhET HTML Simulation Source Code"</b> is a collection of original common libraries and tools developed by PhET, including but not limited
+        to source code (JavaScript/HTML/CSS), images, audio and text.
+      </p>
+
+      <p>
+        PhET licenses PhET HTML Simulation Source Code under the <a href="http://opensource.org/licenses/MIT" target="_blank">MIT License</a>. The
+        full
+        text of the MIT License is available here: <a href="http://opensource.org/licenses/MIT" target="_blank">http://opensource.org/licenses/MIT</a>
+      </p>
+
+      <p>
+        PhET HTML Common Source Code can be accessed at <a href="http://github.com/phetsims" target="_blank">http://github.com/phetsims</a>. The
+        license file within the specific PhET HTML Common Source Code repository specifies whether it is available under the MIT License.
+      </p>
+
+      <p class="ignore bold slant">
+        What does using the MIT License mean?
+      </p>
+
+      <p class="top-paragraph">
+        The common source code libraries for PhET HTML Common Source Code are available for use and/or modification. Anyone may access to
+        the source code and make modifications. The copyright and permission notice must be included in all copies or copies of
+        substantial portions of the Software.
+      </p>
+
+      <h3 id="agreement-II-E">
+        E. 'PhET Interoperable HTML Source Code'
+      </h3>
+
+      <p>
+        “PhET Interoperable HTML Source Code” is a collection of assets developed by PhET that are used in PhET Interoperable HTML Simulation Files,
+        including but not limited to source code (JavaScript/HTML/CSS), images, audio and text.
+      </p>
+
+      <p>
+        This code is not offered through any open source license. PhET Interoperable HTML Source Code may be licensed through individual agreements.
+        Please contact <a href="mailto:phethelp@colorado.edu">phethelp@colorado.edu</a> to inquire about licensing.
+      </p>
+
+      <p>
+        PhET Interoperable HTML Source Code obtained under license contains a license file within the source code repository specifying
+        "Copyright [Insert Current Year], The Regents of the University of Colorado, a body corporate. Created by PhET Interactive Simulations,
+        University of Colorado Boulder. Any use of the PhET Interoperable HTML Source Code is strictly prohibited without a license.”
+      </p>
+
+      <h3 id="agreement-II-F">
+        F. Donations
+      </h3>
+
+      <p class="top-paragraph">
+        PhET requires ongoing donations, sponsorships and grant funding in order to support the project, continue the development of new
+        simulations, and maintain existing simulations.
+      </p>
+
+      <p>
+        Commercial users are highly encouraged to support the project and its mission with a tax-deductible donation to PhET. For more
+        information, email <a href="mailto:phethelp@colorado.edu">phethelp@colorado.edu</a> or visit
+        <a href="https://donatenow.networkforgood.org/1437859">https://phet.colorado.edu/en/donate</a>.
+      </p>
+
+      <h3 id="agreement-II-G">
+        G. Third Party Software Credits
+      </h3>
+
+      <p class="top-paragraph">
+        PhET simulations use third-party software. A complete list of third-party libraries used, the developers, and the associated
+        licenses is listed at the top of each "PhET Regular HTML Simulation File", using the browser's view source tool.
+      </p>
+
+      <h3 id="agreement-II-H">
+        H. Alternative License Options
+      </h3>
+
+      <p class="top-paragraph">
+        Permissions beyond the scope of these licenses, including licensing for PhET Enhanced HTML Simulation Files or source code assets
+        not identified as openly-licensed in their license files, may be available upon request. Please contact us at
+        <a href="mailto:phethelp@colorado.edu">phethelp@colorado.edu</a>.
+      </p>
+    </div>
+
+    <div id="agreement-III" class="section">
+      <h2>
+        III. PHET NAME AND LOGO TRADEMARK
+      </h2>
+
+      <p>
+        The PhET name and PhET logo are registered trademarks of The Regents of the University of Colorado, a body corporate. Permission is granted
+        to use the PhET name and PhET logo only for attribution purposes. Use of the PhET name and/or PhET logo for promotional, marketing, or
+        advertising purposes requires a separate license agreement from the University of Colorado. Contact
+        <a href="mailto:phethelp@colorado.edu">phethelp@colorado.edu</a> to discuss trademark licensing options.
+      </p>
+    </div>
+
+    <div id="agreement-IV" class="section">
+      <h2>
+        IV. PRIVACY POLICY
+      </h2>
+
+      <h3 id="agreement-IV-A">
+        A. Commitment to Individual Privacy
+      </h3>
+
+      <p class="top-paragraph">
+        The University of Colorado and the PhET Interactive Simulations Project support the protection of individual privacy, and ensuring the
+        confidentiality of information provided by its employees, students, visitors, and resource users.
+      </p>
+
+      <h3 id="agreement-IV-B">
+        B. Information Collected
+      </h3>
+
+      <p class="top-paragraph">
+        It is the policy and practice of the University to collect the least amount of personally identifiable information necessary to fulfill
+        its required duties and responsibilities, complete a particular transaction, deliver services, or as required by law. This applies to
+        the collection of all personally identifiable information regardless of source or medium.
+      </p>
+
+      <p>
+        Users may choose whether or not to provide personally identifiable information to the University and PhET via the PhET website.
+      </p>
+
+      <p>
+        In order to document the amount of use of PhET simulations and to provide the best services to our users, PhET collects non-personally
+        identifying information through the use of Google Analytics in each PhET Regular or Interoperable HTML Simulation File. When the simulation
+        is opened, information is collected via Google Analytics’ standard web statistics services. As of July 8, 2014 Google Analytics Terms of
+        Service are located here
+        <a href="http://www.google.com/analytics/terms/us.html" target="_blank">http://www.google.com/analytics/terms/us.html</a>.
+      </p>
+
+      <p>
+        In addition, PhET uses "cookies," which are small text files stored on the user's device, to help operate its website and collect
+        information about online activity.
+      </p>
+
+      <h3 id="agreement-IV-C">
+        C. Information Security
+      </h3>
+
+      <p class="top-paragraph">
+        The PhET has in place appropriate security measures to protect against the unauthorized use or access of its data. Such measures include
+        internal review of data collection, storage, and processing practices and security measures, as well as physical security measures to
+        guard against unauthorized access to systems where data is stored.
+      </p>
+
+      <h3 id="agreement-IV-D">
+        D. Information Sharing
+      </h3>
+
+      <p class="top-paragraph">
+        Access to information collected through the use of PhET simulations is limited to those employees, contractors, and agents who need to know
+        that information in order to operate, develop, or improve our services. PhET may report a summary of this information (in aggregate) to
+        other organizations and individuals for grant reporting purposes, or in published articles to document PhET’s wide-spread use. No
+        personally-identifying information is distributed. PhET requires third parties to whom it discloses information to protect the information
+        in accordance with this policy and applicable law. In addition, PhET may disclose information to third parties when such disclosure is
+        required or permitted by law.
+      </p>
+
+      <h3 id="agreement-IV-E">
+        E. Colorado Open Records Act
+      </h3>
+
+      <p class="top-paragraph">
+        The University of Colorado and the PhET project are subject to the Colorado Open Records Act, C.R.S § 24-72-101 <i>et seq</i>. The Colorado
+        Open Records Act requires that all records maintained by the University and PhET be available for public inspection except as otherwise
+        provided by law. Personal identifying information collected by PhET may be subject to public inspection and copying unless protected by
+        state or federal law.
+      </p>
+
+
+      <h3 id="agreement-IV-F">
+        F. Additional Privacy Terms Apply When PhET is Used with the Microsoft Office Service
+      </h3>
+
+      <p class="top-paragraph">
+        The app for Office Mix will share information with Microsoft about how the users interact with it, such as whether the app loaded
+        successfully, any content that is displayed in the app, and any information entered in the app. Microsoft may combine this
+        information with other information to provide the Office Mix service in accordance with the statement on <a
+          ref="http://aka.ms/privacy-onlinelearning" target="_blank">Privacy &amp; Cookies</a> for Office Mix. By using this app, the user consents
+        to the app sharing information with Microsoft for these purposes.
+      </p>
+
+      <h3 id="agreement-IV-G">
+        G. Additional Privacy Terms Apply For PhET Interoperable HTML Simulation Files
+      </h3>
+
+      <p class="top-paragraph">
+        Additional privacy terms apply for PhET Interoperable HTML Simulation Files. PhET Interoperable HTML Simulation Files have the capability
+        of collecting additional data, including, but not limited to, the end user’s interaction history or the state history of the simulation.
+        Typically, PhET Interoperable HTML Simulation Files are used by a third-party commercial entity or a non-commercial organization that
+        integrates a PhET Interoperable HTML Simulation File into its product or educational activity. Accordingly, the third-party entity or
+        organization may collect or receive additional data. As a condition of use, the third party entity or organization agrees that (i) it
+        is solely responsible for the storage, access, and security of such data; (ii) the University of Colorado is not responsible for the
+        use, storage, access and security of any personally identifiable data the third party organization collects; and (iii) it must indemnify
+        and hold the University of Colorado harmless for any claims arising form its use of such data. End users should consult the privacy
+        terms provided by these third-party organizations.
+      </p>
+
+    </div>
+
+    <div id="agreement-V" class="section">
+      <h2>
+        V. DISCLAIMER
+      </h2>
+
+      <p>
+        This software and the information contained therein is provided as a public service, with the understanding that neither the
+        University of Colorado nor PhET makes any warranties, either express or implied, concerning the accuracy, completeness,
+        reliability, or suitability of this software and information.
+      </p>
+
+      <p>
+        By using this software, you assume all risks associated with such use, including but not limited to the risk of any damage to your
+        computer, software, or data. In no event shall the University or PhET be liable for any direct, indirect, punitive, special,
+        incidental, or consequential damages (including, without limitation, lost revenues or profits or lost or damaged data) arising
+        from the user's use of this software.
+      </p>
+
+      <p>
+        Neither the University nor PhET are a law firm and do not provide legal services or legal advice. Using the simulations under the
+        licensing options in this agreement does not create a lawyer-client or other relationship. Any information provided to the user
+        regarding the licensing options is intended to provide general guidance to the user. If the user requires legal assistance, the
+        user should contact a law firm or a lawyer.
+      </p>
+    </div>
+
+    <div id="agreement-VI" class="section">
+      <h2>
+        VI. CONTACT US
+      </h2>
+
+      <p>
+        Please send comments, questions, or concerns regarding this software agreement to
+        <a href="mailto:phethelp@colorado.edu">phethelp@colorado.edu</a>.
+        Please do not send attachments with the message.
+      </p>
+    </div>
+  </div>
+</div>
+
+  </div>
+  <div id="react-root"></div>
+
+  <div id="page-footer" class="ltr">
+  <div class="main-footer">
+    <div>
+  
+    <hr>
+    <div id="social-footer" dir="ltr">
+      <span>
+        <a class="footer-link" href="http://www.facebook.com/pages/PhET-Interactive-Simulations/161503243888932?v=wall" rel="external nofollow" title="在 Facebook 按赞" aria-label="在 Facebook 按赞" dir="ltr">
+          <i class="fa fa-facebook"></i>
+        </a>
+      </span><span>
+        <a class="footer-link" href="http://twitter.com/PhETSims" rel="external nofollow" title="在 Twitter 上跟随我们" aria-label="在 Twitter 上跟随我们" dir="ltr">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </span><span>
+        <a class="footer-link" href="https://www.instagram.com/phetsims/" rel="external nofollow" title="在 Instagram 跟随我们" aria-label="在 Instagram 跟随我们" dir="ltr">
+          <i class="fa fa-instagram"></i>
+        </a>
+      </span><span>
+        <a class="footer-link" href="https://www.youtube.com/channel/UCMRZ0-ci4ifGBF1bJvrcDRQ" rel="external nofollow" title="在 Youtube 上看我们的影片" aria-label="在 Youtube 上看我们的影片" dir="ltr">
+          <i class="fa fa-youtube-play"></i>
+        </a>
+      </span><span>
+        <a class="footer-link" href="http://www.pinterest.com/PhETSims" rel="external nofollow" title="在 Pinterest 跟随我们" aria-label="在 Pinterest 跟随我们" dir="ltr">
+          <i class="fa fa-pinterest-p"></i>
+        </a>
+      </span>
+    </div>
+    <hr>
+  
+</div>
+    <div id="footer-nav-links">
+      <div>
+        <a href="../about.html"><span class="floating-link">关于 PhET</span></a>
+        <a href="../about/team.html"><span class="floating-link">我们的团队</span></a>
+        <a href="../about/sponsors.html"><span class="floating-link">赞助单位</span></a>
+      </div>
+      <div>
+        <a href="https://phet.colorado.edu/zh_TW/offline-access"><span class="floating-link">离线版</span></a>
+        <a href="../help-center/getting-started.html"><span class="floating-link">Help Center</span></a>
+        <a href="../about/contact.html"><span class="floating-link">联系</span></a>
+      </div>
+      <div>
+        <a href="../about/source-code.html"><span class="floating-link">原始码</span></a>
+        <a href="../licensing.html"><span class="floating-link">授权</span></a>
+        <a href="../for-translators.html"><span class="floating-link">翻译我们的教学</span></a>
+      </div>
+    </div>
+    <div class="other-languages">
+      <div class="translation-links">
+  
+
+  <span>
+      <a href="html.html"><span class="current-locale">正体中文</span></a>
+  </span><span>
+      <a href="../../en/licensing/html.html"><span>English</span></a>
+  </span>
+
+  <div style="display: none" id="locale" locale="zh_TW"></div>
+
+
+</div>
+      <div class="translation-credits">本网站及模拟之正体中文部份，由<a href="http://ezgo.westart.tw/">台湾 PhET 社群</a>进行翻译与维护<br><br/>请见<a href="http://iychiang1809.blogspot.tw/2015/04/phet.html">翻译与贡献者名单</a></div>
+    </div>
+
+    <div id="app-badges">
+      <span>
+  <a href="https://apps.apple.com/tw/app/phet-simulations/id1134126831">
+    <img style="width: 120px;" src="../../images/ios-app-store-badges/HKTW(TC)/badge.svg">
+  </a>
+</span>
+      
+    </div>
+
+  </div>
+  <div class="footer-highlight-background">
+    <div class="footer-bottom">
+      <div class="left">
+        <table>
+          <tr>
+            <td class="sponsor">
+              <a href="http://www.hewlett.org/" rel="external" dir="ltr">
+                <img src="../../images/support/Hewlett_logo_footer_vv.png"
+                     alt="Hewlett Foundation" width="100" />
+              </a>
+            </td>
+            <td class="sponsor">
+              <a href="http://www.nsf.gov/" rel="external" dir="ltr">
+                <img src="../../images/support/NSF_logo_footer-01.png"
+                     alt="National Science Foundation" width="56" />
+              </a>
+            </td>
+            <td class="sponsor">
+              <a href="https://www.google.org/" rel="external" dir="ltr">
+                <img src="../../images/support/google.org_dark.png"
+                     alt="Google.org" width="131" />
+              </a>
+            </td>
+            <td class="sponsor">
+              <a href="http://www.moore.org/" rel="external" dir="ltr">
+                <img src="../../images/support/Moore_Foundation_logo_footer-01.png"
+                     alt="Moore Foundation" width="100" />
+              </a>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="right">
+        <div id="PhET-logo">
+          <a href="../index.html">
+            <img src="../../images/phet-logo-trademarked-black.png" alt="PhET Home Page" title="Go to the PhET home page" style="border: none;"
+                 width="90" id="phet-logo-main-image">
+          </a>
+        </div>
+        <div class="copyright">
+          <a href="../licensing.html">
+            <span>&copy;<span>2020 University of Colorado. </span></span>
+            <br />
+            部份权利保留
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="../../js/phet-v50-min.js"></script>
+</div>
+</body>
+
+<!-- Mirrored from phet.colorado.edu/zh_TW/licensing/html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Apr 2020 04:27:42 GMT -->
+</html>

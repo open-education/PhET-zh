@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:esi="http://java.sun.com/JSP/Page" xml:lang="zh" lang="zh">
+
+<!-- Mirrored from phet.colorado.edu/zh_TW/simulations/translated by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Apr 2020 03:42:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>PhET 已翻譯之模擬教學</title>
+  
+  
+  <link rel="stylesheet" href="../../css/font-awesome/css/font-awesome.min-4.7.css">
+  <link rel="stylesheet" type="text/css" href="../../css/phet-v77-min.css"/>
+
+  <!-- class edu.colorado.phet.website.content.simulations.TranslatedSimsPage -->
+  <!-- host phet.colorado.edu -->
+  
+
+  
+
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+      rel="stylesheet">
+
+  <script type="text/javascript">
+    function initBreakpoint() {
+      var body = document.querySelector( 'body' );
+      var menuParents = document.querySelectorAll( '#page-nav-menu ul[role=menubar] .nav-menu-parent-text' );
+
+      if ( body && menuParents ) {
+        clearInterval( isLargeViewInterval );
+        window.phet = window.phet || {};
+        window.phet.cssBreakpoint = 40 + // page header container padding
+                                    220 + // phet and cu logos
+                                    75 + // search and user menus
+                                    ( body.className.indexOf( 'rtl' ) >= 0 ? 30 : 0 ) + // RTL languages need to break 30 pixels earlier somehow
+                                    Array.prototype.slice.call( menuParents )
+                                      .map( function( item ) {
+                                        return item.offsetWidth
+                                               - parseInt( window.getComputedStyle( item ).paddingRight )
+                                               - parseInt( window.getComputedStyle( item ).paddingLeft )
+                                               + 22; // 22 is horizontal padding + horizontal margin on nav-menu-parent-text in wide view
+                                      } )
+                                      .reduce( function( accumulator, currentItem ) { return accumulator + currentItem; }, 0 ); // dropdown menu width, flexible due to translations
+        const mediaString = '(min-width: ' + window.phet.cssBreakpoint + 'px)';
+        window.phet.isLargeView = function() {
+          return window.matchMedia( mediaString ).matches;
+        };
+
+        document.getElementById( 'page-wrapper' ).className = window.phet.isLargeView() ? 'wide' : 'narrow';
+        document.getElementById( 'page-header-container-wrapper' ).className = window.phet.isLargeView() ? 'expanded' : 'collapsed';
+      }
+    }
+
+    var isLargeViewInterval = setInterval( initBreakpoint, 50 );
+  </script>
+
+        <meta property="og:site_name" content="PhET"/><meta property="twitter:site" content="@PhETsims"/><meta property="og:title" content="PhET 互動式模擬教學"/><meta property="twitter:title" content="PhET 互動式模擬教學"/><meta property="og:url" content="https://phet.colorado.edu/zh_TW/simulations/translated"/><meta property="twitter:card" content="summary"/><meta property="og:image" content="https://phet.colorado.edu/images/phet-social-media-logo.png"/><meta property="twitter:image" content="https://phet.colorado.edu/images/phet-social-media-logo.png"/><meta property="og:description" content="PhET 是一個延伸教育<a {0}>研究</a>專案計畫，透過動畫模擬遊戲的方式吸引學生探索與發現數學、科學方面的各種知識。它是於 2002 年由諾貝爾經濟學獎得主，科羅拉多大學的 Carl Wieman 教授所發起的。"/><meta property="twitter:description" content="PhET 是一個延伸教育<a {0}>研究</a>專案計畫，透過動畫模擬遊戲的方式吸引學生探索與發現數學、科學方面的各種知識。它是於 2002 年由諾貝爾經濟學獎得主，科羅拉多大學的 Carl Wieman 教授所發起的。"/>
+    
+    <link rel="stylesheet" href="../../footer.css">
+  </head>
+<body dir="ltr" class="ltr" id="offline-installer-body">
+<div id="page-wrapper" class="pre-load">
+  <div id="skipNav">
+    <a href="#main-content" accesskey="0" id="skipper" tabindex="1">
+      跳至主頁
+    </a>
+  </div>
+
+  
+
+  <div id="page-header" class="ltr">
+
+    
+
+    <div id="page-header-container-wrapper">
+      <div id="page-header-container" role="banner">
+        <div id="page-header-left">
+          <a href="../index.html" class="phet-logo-link">
+            <div class="phet-logo">
+              <img src="../../images/phet-logo-trademarked.png"
+                   alt="PhET Home Page"
+                   title="Go to the PhET home page"
+              />
+            </div>
+          </a>
+          <div class="cu-logo">
+            <a href="http://www.colorado.edu/" target="_blank">
+              <div class="cu-logo-image-clip">
+                <img src="../../images/logos/cu_logo.png" alt="University of Colorado"/>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <a id="collapsible-menu-toggle" role="button" aria-haspopup="menu" aria-expanded="false" aria-label="切換主選單">
+          <div id="toggle-container">
+          <span id="nw-rotate" class="rotate">
+            <span id="nw-translate" class="line"></span>
+          </span>
+            <span id="ne-rotate" class="rotate">
+            <span id="ne-translate" class="line"></span>
+          </span>
+            <span id="sw-rotate" class="rotate">
+            <span id="sw-translate" class="line"></span>
+          </span>
+            <span id="se-rotate" class="rotate">
+            <span id="se-translate" class="line"></span>
+          </span>
+            <span id="east-center-line" class="line center-line"></span>
+            <span id="west-center-line" class="line center-line"></span>
+          </div>
+        </a>
+
+        <div id="page-header-menus" class="ltr">
+          <div id="collapsible-menu">
+            <div id="search-container-mobile" role="search"></div>
+            <nav id="page-nav-menu" role="navigation">
+  <ul role="menubar">
+    <li class="nav-menu-item">
+      <a class="nav-menu-parent has-menu nav0" role="menuitem" id="nav.simulations" aria-haspopup="menu" aria-expanded="false">
+        <span class="nav-menu-parent-text">教學</span></a>
+      <div class="nav-menu-children">
+        <ul role="menu" aria-labelledby="nav.simulations">
+          <li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-new" href="category/new.html">
+            <span class="nav-menu-child-text">新加入的教學主題</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-html" href="category/html.html">
+            <span class="nav-menu-child-text">HTML5</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-physics" href="category/physics.html">
+            <span class="nav-menu-child-text">物理</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-biology" href="category/biology.html">
+            <span class="nav-menu-child-text">生物</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-chemistry" href="category/chemistry.html">
+            <span class="nav-menu-child-text">化學</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-earth-science" href="category/earth-science.html">
+            <span class="nav-menu-child-text">地球科學</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-math" href="category/math.html">
+            <span class="nav-menu-child-text">數學</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-by-level" href="category/by-level.html">
+            <span class="nav-menu-child-text">依年級區分教學主題</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-by-device" href="category/by-device.html">
+            <span class="nav-menu-child-text">依裝置區分</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-all" href="../simulations.html">
+            <span class="nav-menu-child-text">所有的教學主題</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-simulations-translated" href="translated.html">
+            <span class="nav-menu-child-text">翻譯教學主題</span></a></li>
+        </ul>
+      </div>
+    </li><li class="nav-menu-item">
+      <a class="nav-menu-parent has-menu nav0" role="menuitem" id="nav.teaching" aria-haspopup="menu" aria-expanded="false">
+        <span class="nav-menu-parent-text">教學</span></a>
+      <div class="nav-menu-children">
+        <ul role="menu" aria-labelledby="nav.teaching">
+          <li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-about-general" href="../teaching-resources.html">
+            <span class="nav-menu-child-text">關於</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-forTeachers-tipsForUsingPhet" href="../teaching-resources/tipsForUsingPhet.html">
+            <span class="nav-menu-child-text">使用 PhET 的小提示</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-teacherIdeas-browse" href="https://phet.colorado.edu/zh_TW/teaching-resources/browse-activities">
+            <span class="nav-menu-child-text">瀏覽活動</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-teacherIdeas-submit" href="https://phet.colorado.edu/zh_TW/teaching-resources/submit-activity">
+            <span class="nav-menu-child-text">分享您的活動</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-teacherIdeas-manage" href="https://phet.colorado.edu/zh_TW/teaching-resources/manage-activities">
+            <span class="nav-menu-child-text">我的活動</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-workshops" href="../teaching-resources/workshops.html">
+            <span class="nav-menu-child-text">研習</span></a></li>
+        </ul>
+      </div>
+    </li><li class="nav-menu-item">
+      <a class="nav-menu-parent nav0" role="menuitem" href="../research.html">
+        <span class="nav-menu-parent-text">研究</span></a>
+      <div class="nav-menu-children empty">
+        
+      </div>
+    </li><li class="nav-menu-item">
+      <a class="nav-menu-parent has-menu nav0" role="menuitem" id="nav.accessibility" aria-haspopup="menu" aria-expanded="false">
+        <span class="nav-menu-parent-text">無障礙輔助</span></a>
+      <div class="nav-menu-children">
+        <ul role="menu" aria-labelledby="nav.accessibility">
+          <li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-about-general" href="../accessibility.html">
+            <span class="nav-menu-child-text">關於</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-accessibility-simulations" href="../accessibility/prototypes.html">
+            <span class="nav-menu-child-text">可使用的模擬教材</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-accessibility-research" href="../accessibility/research.html">
+            <span class="nav-menu-child-text">研究與設計</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-accessibility-implementation" href="../accessibility/implementation.html">
+            <span class="nav-menu-child-text">技術實作</span></a></li>
+        </ul>
+      </div>
+    </li><li class="nav-menu-item featured">
+      <a class="nav-menu-parent nav0" role="menuitem" href="../donate.html">
+        <span class="nav-menu-parent-text">贊助我們</span></a>
+      <div class="nav-menu-children empty">
+        
+      </div>
+    </li>
+  </ul>
+
+</nav>
+            <div id="search" role="search">
+              
+              <div id="search-container-desktop" class="search-hidden"></div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--This is a temporary placeholder-->
+  <div style="display: none;">
+    
+  </div>
+
+  <div>此版本於 2020/4/27 建立。更新程式可以從<a href="https://phet.colorado.edu/zh_TW/offline-access">網站上</a>取得。</div>
+
+  <div id="page-content" role="main" class="ltr">
+    
+    <div class="standard-content">
+        
+    </div>
+    <div dir="ltr">
+    <div class="translated-sims standard-content" dir="ltr">
+        <h1>翻譯教學主題</h1>
+        <table class="phet-table">
+            <tr>
+                <th>語言</th>
+                <th>語言（已翻譯）</th>
+                <th class="number">翻譯數</th>
+            </tr>
+            <tr>
+                <td class="list-highlight-background">
+                    <a href="translated/af.html" id="locale-translation-link-af">
+                        <span>Afrikaans</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Afrikaans</td>
+                <td class="number">23</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/ny.html" id="locale-translation-link-ny">
+                        <span>Chichewa</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Nyanja</td>
+                <td class="number">2</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/nb.html" id="locale-translation-link-nb">
+                        <span>Norwegian Bokmal</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Norsk bokmål</td>
+                <td class="number">108</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/nn.html" id="locale-translation-link-nn">
+                        <span>Norwegian Nynorsk</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Norwegian Nynorsk</td>
+                <td class="number">42</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/or.html" id="locale-translation-link-or">
+                        <span>Oriya</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Oriya</td>
+                <td class="number">14</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/ps.html" id="locale-translation-link-ps">
+                        <span>Pashto</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Pushto</td>
+                <td class="number">9</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/sr.html" id="locale-translation-link-sr">
+                        <span>Serbian</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Српски</td>
+                <td class="number">211</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/sh.html" id="locale-translation-link-sh">
+                        <span>Serbo-Croatian</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">sh</td>
+                <td class="number">1</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/si.html" id="locale-translation-link-si">
+                        <span>Sinhalese</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Sinhalese</td>
+                <td class="number">47</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/sw.html" id="locale-translation-link-sw">
+                        <span>Swahili</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Swahili</td>
+                <td class="number">40</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/ta.html" id="locale-translation-link-ta">
+                        <span>Tamil</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Tamil</td>
+                <td class="number">88</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/te.html" id="locale-translation-link-te">
+                        <span>Telugu</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Telugu</td>
+                <td class="number">6</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/ti.html" id="locale-translation-link-ti">
+                        <span>Tigrinya</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Tigrinya</td>
+                <td class="number">1</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/tn.html" id="locale-translation-link-tn">
+                        <span>Tswana</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Tswana</td>
+                <td class="number">4</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/tr.html" id="locale-translation-link-tr">
+                        <span>土耳其語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Türkçe</td>
+                <td class="number">200</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/tk.html" id="locale-translation-link-tk">
+                        <span>土庫曼語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Turkmen</td>
+                <td class="number">150</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/da.html" id="locale-translation-link-da">
+                        <span>丹麥語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Dansk</td>
+                <td class="number">211</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/ba.html" id="locale-translation-link-ba">
+                        <span>巴什基爾語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Bashkir</td>
+                <td class="number">1</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/eu.html" id="locale-translation-link-eu">
+                        <span>巴斯克語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Euskara</td>
+                <td class="number">210</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/ja.html" id="locale-translation-link-ja">
+                        <span>日語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">日本語</td>
+                <td class="number">208</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/mi.html" id="locale-translation-link-mi">
+                        <span>毛利語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Maori</td>
+                <td class="number">42</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/gl.html" id="locale-translation-link-gl">
+                        <span>加里西亞語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Gallegan</td>
+                <td class="number">120</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/hi.html" id="locale-translation-link-hi">
+                        <span>北印度語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">हिंदी</td>
+                <td class="number">55</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/gu.html" id="locale-translation-link-gu">
+                        <span>古吉特拉語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Gujarati</td>
+                <td class="number">30</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/fu.html" id="locale-translation-link-fu">
+                        <span>弗裡斯蘭語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">fu</td>
+                <td class="number">1</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/zh_TW.html" id="locale-translation-link-zh_TW">
+                        <span>正體中文 (台灣)</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">中文 (台灣)</td>
+                <td class="number">211</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/be.html" id="locale-translation-link-be">
+                        <span>白俄羅斯語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">беларускі</td>
+                <td class="number">111</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/lt.html" id="locale-translation-link-lt">
+                        <span>立陶宛語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Lietuvių</td>
+                <td class="number">24</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/is.html" id="locale-translation-link-is">
+                        <span>冰島語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">íslenska</td>
+                <td class="number">4</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/hu.html" id="locale-translation-link-hu">
+                        <span>匈牙利語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">magyar</td>
+                <td class="number">211</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/in.html" id="locale-translation-link-in">
+                        <span>印尼語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Bahasa Indonesia</td>
+                <td class="number">138</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/am.html" id="locale-translation-link-am">
+                        <span>衣索比亞的官方語言</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Amharic</td>
+                <td class="number">76</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/es.html" id="locale-translation-link-es">
+                        <span>西班牙語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">español</td>
+                <td class="number">211</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/es_ES.html" id="locale-translation-link-es_ES">
+                        <span>西班牙語 (西班牙)</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">español (España)</td>
+                <td class="number">47</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/es_CO.html" id="locale-translation-link-es_CO">
+                        <span>西班牙語 (哥倫比亞)</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">español (Colombia)</td>
+                <td class="number">17</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/es_PE.html" id="locale-translation-link-es_PE">
+                        <span>西班牙語 (秘魯)</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">español (Perú)</td>
+                <td class="number">211</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/es_MX.html" id="locale-translation-link-es_MX">
+                        <span>西班牙語 (墨西哥)</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">español (México)</td>
+                <td class="number">208</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/hr.html" id="locale-translation-link-hr">
+                        <span>克羅埃西亞語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">hrvatski</td>
+                <td class="number">155</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/kn.html" id="locale-translation-link-kn">
+                        <span>坎那達語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Kannada</td>
+                <td class="number">107</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/iw.html" id="locale-translation-link-iw">
+                        <span>希伯來語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">עברית</td>
+                <td class="number">189</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/el.html" id="locale-translation-link-el">
+                        <span>希臘語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Ελληνικά</td>
+                <td class="number">211</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/hy.html" id="locale-translation-link-hy">
+                        <span>亞美尼亞語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Armenian</td>
+                <td class="number">36</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/az.html" id="locale-translation-link-az">
+                        <span>亞塞拜然語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Azerbaijani</td>
+                <td class="number">39</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/bn.html" id="locale-translation-link-bn">
+                        <span>孟加拉語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Bengali</td>
+                <td class="number">5</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/lv.html" id="locale-translation-link-lv">
+                        <span>拉脫維亞語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Latviešu</td>
+                <td class="number">115</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/bs.html" id="locale-translation-link-bs">
+                        <span>波士尼亞語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Bosanski</td>
+                <td class="number">211</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/fa.html" id="locale-translation-link-fa">
+                        <span>波斯語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">فارسی</td>
+                <td class="number">209</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/pl.html" id="locale-translation-link-pl">
+                        <span>波蘭語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">polski</td>
+                <td class="number">210</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/fr.html" id="locale-translation-link-fr">
+                        <span>法語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">français</td>
+                <td class="number">210</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/fi.html" id="locale-translation-link-fi">
+                        <span>芬蘭語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">suomi</td>
+                <td class="number">116</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/ar.html" id="locale-translation-link-ar">
+                        <span>阿拉伯語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">العربية</td>
+                <td class="number">161</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/ar_SA.html" id="locale-translation-link-ar_SA">
+                        <span>阿拉伯語 (沙烏地阿拉伯)</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">العربية (السعودية)</td>
+                <td class="number">76</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/ar_MA.html" id="locale-translation-link-ar_MA">
+                        <span>阿拉伯語 (摩洛哥)</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">العربية (المغرب)</td>
+                <td class="number">1</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/sq.html" id="locale-translation-link-sq">
+                        <span>阿爾巴尼亞語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">shqip</td>
+                <td class="number">137</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/bg.html" id="locale-translation-link-bg">
+                        <span>保加利亞語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">български</td>
+                <td class="number">65</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/ru.html" id="locale-translation-link-ru">
+                        <span>俄文</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">русский</td>
+                <td class="number">169</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/kk.html" id="locale-translation-link-kk">
+                        <span>哈薩克語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Kazakh</td>
+                <td class="number">194</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/cy.html" id="locale-translation-link-cy">
+                        <span>威爾斯語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Welsh</td>
+                <td class="number">8</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/en.html" id="locale-translation-link-en">
+                        <span>英語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">English</td>
+                <td class="number">211</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/en_CA.html" id="locale-translation-link-en_CA">
+                        <span>英語 (加拿大)</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">English (Canada)</td>
+                <td class="number">1</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/ku_TR.html" id="locale-translation-link-ku_TR">
+                        <span>庫德文 (土耳其)</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Kurdish (Turkey)</td>
+                <td class="number">61</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/ku.html" id="locale-translation-link-ku">
+                        <span>庫德語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">کوردی</td>
+                <td class="number">18</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/th.html" id="locale-translation-link-th">
+                        <span>泰語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">ไทย</td>
+                <td class="number">151</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/ht.html" id="locale-translation-link-ht">
+                        <span>海地語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Haitian</td>
+                <td class="number">31</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/uk.html" id="locale-translation-link-uk">
+                        <span>烏克蘭語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">українська</td>
+                <td class="number">129</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/uz.html" id="locale-translation-link-uz">
+                        <span>烏茲別克語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Uzbek</td>
+                <td class="number">14</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/ur.html" id="locale-translation-link-ur">
+                        <span>烏都語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Urdu</td>
+                <td class="number">12</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/ml.html" id="locale-translation-link-ml">
+                        <span>馬來亞拉姆語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Malayalam</td>
+                <td class="number">8</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/ms.html" id="locale-translation-link-ms">
+                        <span>馬來語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Bahasa Melayu</td>
+                <td class="number">33</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/mk.html" id="locale-translation-link-mk">
+                        <span>馬其頓語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">македонски</td>
+                <td class="number">155</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/mr.html" id="locale-translation-link-mr">
+                        <span>馬拉地語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">मराठी</td>
+                <td class="number">105</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/km.html" id="locale-translation-link-km">
+                        <span>高棉語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Khmer</td>
+                <td class="number">99</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/cs.html" id="locale-translation-link-cs">
+                        <span>捷克</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">čeština</td>
+                <td class="number">152</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/nl.html" id="locale-translation-link-nl">
+                        <span>荷蘭語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Nederlands</td>
+                <td class="number">206</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/ka.html" id="locale-translation-link-ka">
+                        <span>喬治亞語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">ქართული</td>
+                <td class="number">107</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/sl.html" id="locale-translation-link-sl">
+                        <span>斯洛伐尼亞語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Slovenščina</td>
+                <td class="number">124</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/sk.html" id="locale-translation-link-sk">
+                        <span>斯洛伐克語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Slovenčina</td>
+                <td class="number">197</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/vi.html" id="locale-translation-link-vi">
+                        <span>越南語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Tiếng Việt</td>
+                <td class="number">209</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/et.html" id="locale-translation-link-et">
+                        <span>愛沙尼亞語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Eesti</td>
+                <td class="number">125</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/ga.html" id="locale-translation-link-ga">
+                        <span>愛爾蘭語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Gaeilge</td>
+                <td class="number">72</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/sv.html" id="locale-translation-link-sv">
+                        <span>瑞典語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">svenska</td>
+                <td class="number">182</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/it.html" id="locale-translation-link-it">
+                        <span>義大利語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">italiano</td>
+                <td class="number">209</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/pt.html" id="locale-translation-link-pt">
+                        <span>葡萄牙語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">português</td>
+                <td class="number">127</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/pt_BR.html" id="locale-translation-link-pt_BR">
+                        <span>葡萄牙語 (巴西)</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">português (Brasil)</td>
+                <td class="number">208</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/ca.html" id="locale-translation-link-ca">
+                        <span>嘉泰羅尼亞語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">català</td>
+                <td class="number">58</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/mn.html" id="locale-translation-link-mn">
+                        <span>蒙古語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Монгол (Монгол)</td>
+                <td class="number">183</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/lo.html" id="locale-translation-link-lo">
+                        <span>寮國語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Lao</td>
+                <td class="number">61</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/de.html" id="locale-translation-link-de">
+                        <span>德語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Deutsch</td>
+                <td class="number">211</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/mo.html" id="locale-translation-link-mo">
+                        <span>摩爾達維亞</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Moldavian</td>
+                <td class="number">6</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/ko.html" id="locale-translation-link-ko">
+                        <span>韓語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">한국어</td>
+                <td class="number">211</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/zh_CN.html" id="locale-translation-link-zh_CN">
+                        <span>簡體中文</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">中文 (中国)</td>
+                <td class="number">210</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/bo.html" id="locale-translation-link-bo">
+                        <span>藏語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">Tibetan</td>
+                <td class="number">20</td>
+            </tr><tr>
+                <td class="list-highlight-background">
+                    <a href="translated/ro.html" id="locale-translation-link-ro">
+                        <span>羅馬尼亞語</span>
+                    </a>
+                </td>
+                <td class="list-highlight-background">română</td>
+                <td class="number">71</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+  </div>
+  <div id="react-root"></div>
+
+  <div id="page-footer" class="ltr">
+  <div class="main-footer">
+    <div>
+  
+    <hr>
+    <div id="social-footer" dir="ltr">
+      <span>
+        <a class="footer-link" href="http://www.facebook.com/pages/PhET-Interactive-Simulations/161503243888932?v=wall" rel="external nofollow" title="在 Facebook 按讚" aria-label="在 Facebook 按讚" dir="ltr">
+          <i class="fa fa-facebook"></i>
+        </a>
+      </span><span>
+        <a class="footer-link" href="http://twitter.com/PhETSims" rel="external nofollow" title="在 Twitter 上跟隨我們" aria-label="在 Twitter 上跟隨我們" dir="ltr">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </span><span>
+        <a class="footer-link" href="https://www.instagram.com/phetsims/" rel="external nofollow" title="在 Instagram 跟隨我們" aria-label="在 Instagram 跟隨我們" dir="ltr">
+          <i class="fa fa-instagram"></i>
+        </a>
+      </span><span>
+        <a class="footer-link" href="https://www.youtube.com/channel/UCMRZ0-ci4ifGBF1bJvrcDRQ" rel="external nofollow" title="在 Youtube 上看我們的影片" aria-label="在 Youtube 上看我們的影片" dir="ltr">
+          <i class="fa fa-youtube-play"></i>
+        </a>
+      </span><span>
+        <a class="footer-link" href="http://www.pinterest.com/PhETSims" rel="external nofollow" title="在 Pinterest 跟隨我們" aria-label="在 Pinterest 跟隨我們" dir="ltr">
+          <i class="fa fa-pinterest-p"></i>
+        </a>
+      </span>
+    </div>
+    <hr>
+  
+</div>
+    <div id="footer-nav-links">
+      <div>
+        <a href="../about.html"><span class="floating-link">關於 PhET</span></a>
+        <a href="../about/team.html"><span class="floating-link">我們的團隊</span></a>
+        <a href="../about/sponsors.html"><span class="floating-link">贊助單位</span></a>
+      </div>
+      <div>
+        <a href="https://phet.colorado.edu/zh_TW/offline-access"><span class="floating-link">離線版</span></a>
+        <a href="../help-center/getting-started.html"><span class="floating-link">Help Center</span></a>
+        <a href="../about/contact.html"><span class="floating-link">聯繫</span></a>
+      </div>
+      <div>
+        <a href="../about/source-code.html"><span class="floating-link">原始碼</span></a>
+        <a href="../licensing.html"><span class="floating-link">授權</span></a>
+        <a href="../for-translators.html"><span class="floating-link">翻譯我們的教學</span></a>
+      </div>
+    </div>
+    <div class="other-languages">
+      <div class="translation-links">
+  
+
+  <span>
+      <a href="translated.html"><span class="current-locale">正體中文</span></a>
+  </span><span>
+      <a href="../../en/simulations/translated.html"><span>English</span></a>
+  </span>
+
+  <div style="display: none" id="locale" locale="zh_TW"></div>
+
+
+</div>
+      <div class="translation-credits">本網站及模擬之正體中文部份，由<a href="http://ezgo.westart.tw/">臺灣 PhET 社群</a>進行翻譯與維護<br><br/>請見<a href="http://iychiang1809.blogspot.tw/2015/04/phet.html">翻譯與貢獻者名單</a></div>
+    </div>
+
+    <div id="app-badges">
+      <span>
+  <a href="https://apps.apple.com/tw/app/phet-simulations/id1134126831">
+    <img style="width: 120px;" src="../../images/ios-app-store-badges/HKTW(TC)/badge.svg">
+  </a>
+</span>
+      
+    </div>
+
+  </div>
+  <div class="footer-highlight-background">
+    <div class="footer-bottom">
+      <div class="left">
+        <table>
+          <tr>
+            <td class="sponsor">
+              <a href="http://www.hewlett.org/" rel="external" dir="ltr">
+                <img src="../../images/support/Hewlett_logo_footer_vv.png"
+                     alt="Hewlett Foundation" width="100" />
+              </a>
+            </td>
+            <td class="sponsor">
+              <a href="http://www.nsf.gov/" rel="external" dir="ltr">
+                <img src="../../images/support/NSF_logo_footer-01.png"
+                     alt="National Science Foundation" width="56" />
+              </a>
+            </td>
+            <td class="sponsor">
+              <a href="https://www.google.org/" rel="external" dir="ltr">
+                <img src="../../images/support/google.org_dark.png"
+                     alt="Google.org" width="131" />
+              </a>
+            </td>
+            <td class="sponsor">
+              <a href="http://www.moore.org/" rel="external" dir="ltr">
+                <img src="../../images/support/Moore_Foundation_logo_footer-01.png"
+                     alt="Moore Foundation" width="100" />
+              </a>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="right">
+        <div id="PhET-logo">
+          <a href="../index.html">
+            <img src="../../images/phet-logo-trademarked-black.png" alt="PhET Home Page" title="Go to the PhET home page" style="border: none;"
+                 width="90" id="phet-logo-main-image">
+          </a>
+        </div>
+        <div class="copyright">
+          <a href="../licensing.html">
+            <span>&copy;<span>2020 University of Colorado. </span></span>
+            <br />
+            部份權利保留
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="../../js/phet-v50-min.js"></script>
+</div>
+</body>
+
+<!-- Mirrored from phet.colorado.edu/zh_TW/simulations/translated by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Apr 2020 03:42:55 GMT -->
+</html>
+

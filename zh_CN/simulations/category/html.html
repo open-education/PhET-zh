@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:esi="http://java.sun.com/JSP/Page" xml:lang="zh" lang="zh">
+
+<!-- Mirrored from phet.colorado.edu/zh_TW/simulations/category/html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Apr 2020 03:28:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>HTML5 - PhET 模擬教學</title>
+  
+  
+  <link rel="stylesheet" href="../../../css/font-awesome/css/font-awesome.min-4.7.css">
+  <link rel="stylesheet" type="text/css" href="../../../css/phet-v77-min.css"/>
+
+  <!-- class edu.colorado.phet.website.content.simulations.HTML5Page -->
+  <!-- host phet.colorado.edu -->
+  
+
+  
+
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+      rel="stylesheet">
+
+  <script type="text/javascript">
+    function initBreakpoint() {
+      var body = document.querySelector( 'body' );
+      var menuParents = document.querySelectorAll( '#page-nav-menu ul[role=menubar] .nav-menu-parent-text' );
+
+      if ( body && menuParents ) {
+        clearInterval( isLargeViewInterval );
+        window.phet = window.phet || {};
+        window.phet.cssBreakpoint = 40 + // page header container padding
+                                    220 + // phet and cu logos
+                                    75 + // search and user menus
+                                    ( body.className.indexOf( 'rtl' ) >= 0 ? 30 : 0 ) + // RTL languages need to break 30 pixels earlier somehow
+                                    Array.prototype.slice.call( menuParents )
+                                      .map( function( item ) {
+                                        return item.offsetWidth
+                                               - parseInt( window.getComputedStyle( item ).paddingRight )
+                                               - parseInt( window.getComputedStyle( item ).paddingLeft )
+                                               + 22; // 22 is horizontal padding + horizontal margin on nav-menu-parent-text in wide view
+                                      } )
+                                      .reduce( function( accumulator, currentItem ) { return accumulator + currentItem; }, 0 ); // dropdown menu width, flexible due to translations
+        const mediaString = '(min-width: ' + window.phet.cssBreakpoint + 'px)';
+        window.phet.isLargeView = function() {
+          return window.matchMedia( mediaString ).matches;
+        };
+
+        document.getElementById( 'page-wrapper' ).className = window.phet.isLargeView() ? 'wide' : 'narrow';
+        document.getElementById( 'page-header-container-wrapper' ).className = window.phet.isLargeView() ? 'expanded' : 'collapsed';
+      }
+    }
+
+    var isLargeViewInterval = setInterval( initBreakpoint, 50 );
+  </script>
+
+        <meta property="og:site_name" content="PhET"/><meta property="twitter:site" content="@PhETsims"/><meta property="og:title" content="HTML5 - PhET 模擬教學"/><meta property="twitter:title" content="HTML5 - PhET 模擬教學"/><meta property="og:url" content="https://phet.colorado.edu/zh_TW/simulations/category/html"/><meta property="twitter:card" content="summary"/><meta property="og:image" content="https://phet.colorado.edu/images/phet-social-media-logo.png"/><meta property="twitter:image" content="https://phet.colorado.edu/images/phet-social-media-logo.png"/><meta property="og:description" content="將模擬教學轉換成 HTML5，可以在更多平台與裝置上執行。不管您是用電腦、iPad、Chromebook 或自己的其他行動裝置，PhET 的模擬教學都可以自由執行。現在就一起來支持我們的任務，讓學生的學習經驗更豐富多元！"/><meta property="twitter:description" content="將模擬教學轉換成 HTML5，可以在更多平台與裝置上執行。不管您是用電腦、iPad、Chromebook 或自己的其他行動裝置，PhET 的模擬教學都可以自由執行。現在就一起來支持我們的任務，讓學生的學習經驗更豐富多元！"/>
+    
+    <link rel="stylesheet" href="../../../footer.css">
+  
+    <style type="text/css" id="edu-colorado-phet-website-content-simulations-HTML5Panel-0">
+      div.html-why-html5 {
+        height: 185px;
+        line-height: 1.1;
+        overflow: auto;
+      }
+
+      span.html-text-our-new-html5-sims {
+        display: inline-block;
+      }
+
+      div#donate-button {
+        display: inline-block;
+        vertical-align: bottom;
+        margin-left: 20px;
+      }
+    </style>
+  
+    <style id="edu-colorado-phet-website-panels-PromotionPanel-0">
+      div.ipad-banner h2 {
+        color: #f08621;
+        font-size: 36px;
+        font-weight: 100;
+      }
+
+      div.ipad-banner h1 {
+        color: #f08621;
+        font-size: 78px;
+        font-weight: 100;
+        margin: 0 0 50px 0;
+      }
+
+      div.ipad-banner div {
+        display: inline-block;
+      }
+
+      div.ipad-banner {
+        margin: auto;
+        width: 560px;
+      }
+
+      div.ipad-banner ul {
+        margin-top: 0;
+      }
+
+      div.ipad-banner li {
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #333;
+      }
+    </style>
+  </head>
+<body dir="ltr" class="ltr" id="offline-installer-body">
+<div id="page-wrapper" class="pre-load">
+  <div id="skipNav">
+    <a href="#main-content" accesskey="0" id="skipper" tabindex="1">
+      跳至主頁
+    </a>
+  </div>
+
+  
+
+  <div id="page-header" class="ltr">
+
+    
+
+    <div id="page-header-container-wrapper">
+      <div id="page-header-container" role="banner">
+        <div id="page-header-left">
+          <a href="../../index.html" class="phet-logo-link">
+            <div class="phet-logo">
+              <img src="../../../images/phet-logo-trademarked.png"
+                   alt="PhET Home Page"
+                   title="Go to the PhET home page"
+              />
+            </div>
+          </a>
+          <div class="cu-logo">
+            <a href="http://www.colorado.edu/" target="_blank">
+              <div class="cu-logo-image-clip">
+                <img src="../../../images/logos/cu_logo.png" alt="University of Colorado"/>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <a id="collapsible-menu-toggle" role="button" aria-haspopup="menu" aria-expanded="false" aria-label="切換主選單">
+          <div id="toggle-container">
+          <span id="nw-rotate" class="rotate">
+            <span id="nw-translate" class="line"></span>
+          </span>
+            <span id="ne-rotate" class="rotate">
+            <span id="ne-translate" class="line"></span>
+          </span>
+            <span id="sw-rotate" class="rotate">
+            <span id="sw-translate" class="line"></span>
+          </span>
+            <span id="se-rotate" class="rotate">
+            <span id="se-translate" class="line"></span>
+          </span>
+            <span id="east-center-line" class="line center-line"></span>
+            <span id="west-center-line" class="line center-line"></span>
+          </div>
+        </a>
+
+        <div id="page-header-menus" class="ltr">
+          <div id="collapsible-menu">
+            <div id="search-container-mobile" role="search"></div>
+            <nav id="page-nav-menu" role="navigation">
+  <ul role="menubar">
+    <li class="nav-menu-item">
+      <a class="nav-menu-parent has-menu nav0" role="menuitem" id="nav.simulations" aria-haspopup="menu" aria-expanded="false">
+        <span class="nav-menu-parent-text">教學</span></a>
+      <div class="nav-menu-children">
+        <ul role="menu" aria-labelledby="nav.simulations">
+          <li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-new" href="new.html">
+            <span class="nav-menu-child-text">新加入的教學主題</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-html" href="html.html">
+            <span class="nav-menu-child-text">HTML5</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-physics" href="physics.html">
+            <span class="nav-menu-child-text">物理</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-biology" href="biology.html">
+            <span class="nav-menu-child-text">生物</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-chemistry" href="chemistry.html">
+            <span class="nav-menu-child-text">化學</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-earth-science" href="earth-science.html">
+            <span class="nav-menu-child-text">地球科學</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-math" href="math.html">
+            <span class="nav-menu-child-text">數學</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-by-level" href="by-level.html">
+            <span class="nav-menu-child-text">依年級區分教學主題</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-by-device" href="by-device.html">
+            <span class="nav-menu-child-text">依裝置區分</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-all" href="../../simulations.html">
+            <span class="nav-menu-child-text">所有的教學主題</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-simulations-translated" href="../translated.html">
+            <span class="nav-menu-child-text">翻譯教學主題</span></a></li>
+        </ul>
+      </div>
+    </li><li class="nav-menu-item">
+      <a class="nav-menu-parent has-menu nav0" role="menuitem" id="nav.teaching" aria-haspopup="menu" aria-expanded="false">
+        <span class="nav-menu-parent-text">教學</span></a>
+      <div class="nav-menu-children">
+        <ul role="menu" aria-labelledby="nav.teaching">
+          <li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-about-general" href="../../teaching-resources.html">
+            <span class="nav-menu-child-text">關於</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-forTeachers-tipsForUsingPhet" href="../../teaching-resources/tipsForUsingPhet.html">
+            <span class="nav-menu-child-text">使用 PhET 的小提示</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-teacherIdeas-browse" href="https://phet.colorado.edu/zh_TW/teaching-resources/browse-activities">
+            <span class="nav-menu-child-text">瀏覽活動</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-teacherIdeas-submit" href="https://phet.colorado.edu/zh_TW/teaching-resources/submit-activity">
+            <span class="nav-menu-child-text">分享您的活動</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-teacherIdeas-manage" href="https://phet.colorado.edu/zh_TW/teaching-resources/manage-activities">
+            <span class="nav-menu-child-text">我的活動</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-workshops" href="../../teaching-resources/workshops.html">
+            <span class="nav-menu-child-text">研習</span></a></li>
+        </ul>
+      </div>
+    </li><li class="nav-menu-item">
+      <a class="nav-menu-parent nav0" role="menuitem" href="../../research.html">
+        <span class="nav-menu-parent-text">研究</span></a>
+      <div class="nav-menu-children empty">
+        
+      </div>
+    </li><li class="nav-menu-item">
+      <a class="nav-menu-parent has-menu nav0" role="menuitem" id="nav.accessibility" aria-haspopup="menu" aria-expanded="false">
+        <span class="nav-menu-parent-text">無障礙輔助</span></a>
+      <div class="nav-menu-children">
+        <ul role="menu" aria-labelledby="nav.accessibility">
+          <li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-about-general" href="../../accessibility.html">
+            <span class="nav-menu-child-text">關於</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-accessibility-simulations" href="../../accessibility/prototypes.html">
+            <span class="nav-menu-child-text">可使用的模擬教材</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-accessibility-research" href="../../accessibility/research.html">
+            <span class="nav-menu-child-text">研究與設計</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-accessibility-implementation" href="../../accessibility/implementation.html">
+            <span class="nav-menu-child-text">技術實作</span></a></li>
+        </ul>
+      </div>
+    </li><li class="nav-menu-item featured">
+      <a class="nav-menu-parent nav0" role="menuitem" href="../../donate.html">
+        <span class="nav-menu-parent-text">贊助我們</span></a>
+      <div class="nav-menu-children empty">
+        
+      </div>
+    </li>
+  </ul>
+
+</nav>
+            <div id="search" role="search">
+              
+              <div id="search-container-desktop" class="search-hidden"></div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--This is a temporary placeholder-->
+  <div style="display: none;">
+    
+  </div>
+
+  <div>此版本於 2020/4/27 建立。更新程式可以從<a href="https://phet.colorado.edu/zh_TW/offline-access">網站上</a>取得。</div>
+
+  <div id="page-content" role="main" class="ltr">
+    
+    <div class="html-page">
+        <div dir="ltr">
+  <div class="html-panel standard-content" dir="ltr">
+    <div id="html5-features-missing">
+      您的瀏覽器無法執行我們的 HTML5 模擬教學。請使用新版本的 Firefox、Chrome 或 Safari。
+    </div>
+    <div id="top-content">
+      <div>
+  
+
+  <div id="normal-banner">
+    <div class="html-video-container">
+      <iframe class="html-video-thumbnail" width="320" height="180" src="https://www.youtube-nocookie.com/embed/zsTFNkVnbOY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+    </div>
+    <div class="html-why-html5">
+      <span>做個 HTML5 英雄吧！</span>
+      <p>
+        將模擬教學轉換成 HTML5，可以在更多平台與裝置上執行。不管您是用電腦、iPad、Chromebook 或自己的其他行動裝置，PhET 的模擬教學都可以自由執行。<br><br>現在就一起來支持我們的任務，讓學生的學習經驗更豐富多元！
+      </p>
+    </div>
+    <div>
+      <span class="html-text-our-new-html5-sims">PhET 快速提示</span>
+      <div id="donate-button">
+        <a class="phet-button simStyleBlue" href="../../donate.html" target="_blank">
+          <span>捐款</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+    <div class="new-sims-header">
+      <span id="left" style="width:453px;">
+        <h1 class="regular-page-title">HTML5 模擬教學</h1>
+        
+      </span>
+      <span id="right">
+        <table>
+          <tr>
+            <td class="text-right-classic">
+              <div class="toggle-index-new">
+                <span>
+                  <a href="#" title="Thumbnail View" style="color: black;"><i class="fa fa-th" style="font-size: 18px"></i></a>
+                </span>
+                <span>
+                  <a href="html/index.html" title="List View" style="color: grey;"><i class="fa fa-list" style="font-size: 18px"></i></a>
+                </span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </span>
+    </div>
+
+
+    <div id="new-sims">
+      <div dir="ltr">
+    <div dir="ltr">
+        <table>
+            <tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/acid-base-solutions.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/acid-base-solutions/latest/acid-base-solutions-128.png" id="simulation-display-thumbnail-acid-base-solutions" alt="Screenshot of the simulation Acid-Base Solutions_酸鹼溶液" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Acid-Base Solutions_酸鹼溶液</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/area-builder.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/area-builder/latest/area-builder-128.png" id="simulation-display-thumbnail-area-builder" alt="Screenshot of the simulation Area Builder_周長與面積" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Area Builder_周長與面積</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/area-model-algebra.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/area-model-algebra/latest/area-model-algebra-128.png" id="simulation-display-thumbnail-area-model-algebra" alt="Screenshot of the simulation Area Model Algebra_面積模型與代數" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Area Model Algebra_面積模型與代數</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/area-model-decimals.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/area-model-decimals/latest/area-model-decimals-128.png" id="simulation-display-thumbnail-area-model-decimals" alt="Screenshot of the simulation Area Model Decimals_面積模型與小數" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Area Model Decimals_面積模型與小數</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/area-model-introduction.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/area-model-introduction/latest/area-model-introduction-128.png" id="simulation-display-thumbnail-area-model-introduction" alt="Screenshot of the simulation Area Model Introduction_面積模型介紹" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Area Model Introduction_面積模型介紹</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/area-model-multiplication.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/area-model-multiplication/latest/area-model-multiplication-128.png" id="simulation-display-thumbnail-area-model-multiplication" alt="Screenshot of the simulation Area Model Multiplication_面積模型與乘法" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Area Model Multiplication_面積模型與乘法</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/arithmetic.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/arithmetic/latest/arithmetic-128.png" id="simulation-display-thumbnail-arithmetic" alt="Screenshot of the simulation Arithmetic_算數" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Arithmetic_算數</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/atomic-interactions.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/atomic-interactions/latest/atomic-interactions-128.png" id="simulation-display-thumbnail-atomic-interactions" alt="Screenshot of the simulation Atomic Interactions_原子交互作用" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Atomic Interactions_原子交互作用</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/balancing-act.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/balancing-act/latest/balancing-act-128.png" id="simulation-display-thumbnail-balancing-act" alt="Screenshot of the simulation Balancing Act_平衡動作" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Balancing Act_平衡動作</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/balancing-chemical-equations.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/balancing-chemical-equations/latest/balancing-chemical-equations-128.png" id="simulation-display-thumbnail-balancing-chemical-equations" alt="Screenshot of the simulation Balancing Chemical Equations_平衡化學方程式" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Balancing Chemical Equations_平衡化學方程式</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/balloons-and-static-electricity.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/balloons-and-static-electricity/latest/balloons-and-static-electricity-128.png" id="simulation-display-thumbnail-balloons-and-static-electricity" alt="Screenshot of the simulation Balloons and Static Electricity_氣球和靜電引力" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Balloons and Static Electricity_氣球和靜電引力</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/beers-law-lab.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/beers-law-lab/latest/beers-law-lab-128.png" id="simulation-display-thumbnail-beers-law-lab" alt="Screenshot of the simulation Beer&#39;s Law Lab_比爾定律" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Beer&#039;s Law Lab_比爾定律</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/bending-light.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/bending-light/latest/bending-light-128.png" id="simulation-display-thumbnail-bending-light" alt="Screenshot of the simulation Bending Light_光的折射" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Bending Light_光的折射</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/blackbody-spectrum.html" class="simulation-link">
+                      <img class="new-ribbon" src="../../../images/icons/sim-badges/new.png" alt="new-ribbon" width="45" height="51"/>
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/blackbody-spectrum/latest/blackbody-spectrum-128.png" id="simulation-display-thumbnail-blackbody-spectrum" alt="Screenshot of the simulation Blackbody Spectrum_黑體輻射光譜" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Blackbody Spectrum_黑體輻射光譜</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/build-a-fraction.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/build-a-fraction/latest/build-a-fraction-128.png" id="simulation-display-thumbnail-build-a-fraction" alt="Screenshot of the simulation Build a Fraction_建立一個分數" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Build a Fraction_建立一個分數</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/build-an-atom.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/build-an-atom/latest/build-an-atom-128.png" id="simulation-display-thumbnail-build-an-atom" alt="Screenshot of the simulation Build An Atom_建立一個原子" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Build An Atom_建立一個原子</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/capacitor-lab-basics.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/capacitor-lab-basics/latest/capacitor-lab-basics-128.png" id="simulation-display-thumbnail-capacitor-lab-basics" alt="Screenshot of the simulation Capacitor Lab:Basics_電容實驗室：基礎" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Capacitor Lab:Basics_電容實驗室：基礎</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/charges-and-fields.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/charges-and-fields/latest/charges-and-fields-128.png" id="simulation-display-thumbnail-charges-and-fields" alt="Screenshot of the simulation Charges And Fields_電荷與電場" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Charges And Fields_電荷與電場</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/circuit-construction-kit-dc.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc-128.png" id="simulation-display-thumbnail-circuit-construction-kit-dc" alt="Screenshot of the simulation Circuit Construction Kit: DC_電路組裝套件：直流電" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Circuit Construction Kit: DC_電路組裝套件：直流電</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/circuit-construction-kit-dc-virtual-lab.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/circuit-construction-kit-dc-virtual-lab/latest/circuit-construction-kit-dc-virtual-lab-128.png" id="simulation-display-thumbnail-circuit-construction-kit-dc-virtual-lab" alt="Screenshot of the simulation Circuit Construction Kit: DC - Virtual Lab_電路組裝套件：直流電 - 虛擬實驗室" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Circuit Construction Kit: DC - Virtual Lab_電路組裝套件：直流電 - 虛擬實驗室</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/color-vision.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/color-vision/latest/color-vision-128.png" id="simulation-display-thumbnail-color-vision" alt="Screenshot of the simulation Color Vision_彩色視覺" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Color Vision_彩色視覺</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/concentration.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/concentration/latest/concentration-128.png" id="simulation-display-thumbnail-concentration" alt="Screenshot of the simulation Concentration_濃度" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Concentration_濃度</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/coulombs-law.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/coulombs-law/latest/coulombs-law-128.png" id="simulation-display-thumbnail-coulombs-law" alt="Screenshot of the simulation Coulomb&#39;s Law_庫侖定律" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Coulomb&#039;s Law_庫侖定律</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/curve-fitting.html" class="simulation-link">
+                      <img class="new-ribbon" src="../../../images/icons/sim-badges/new.png" alt="new-ribbon" width="45" height="51"/>
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/curve-fitting/latest/curve-fitting-128.png" id="simulation-display-thumbnail-curve-fitting" alt="Screenshot of the simulation Curve Fitting_曲線擬合" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Curve Fitting_曲線擬合</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/diffusion.html" class="simulation-link">
+                      <img class="new-ribbon" src="../../../images/icons/sim-badges/new.png" alt="new-ribbon" width="45" height="51"/>
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/diffusion/latest/diffusion-128.png" id="simulation-display-thumbnail-diffusion" alt="Screenshot of the simulation Diffusion_氣體的擴散" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Diffusion_氣體的擴散</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/energy-forms-and-changes.html" class="simulation-link">
+                      <img class="new-ribbon" src="../../../images/icons/sim-badges/new.png" alt="new-ribbon" width="45" height="51"/>
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/energy-forms-and-changes/latest/energy-forms-and-changes-128.png" id="simulation-display-thumbnail-energy-forms-and-changes" alt="Screenshot of the simulation Energy Forms and Changes_能量形式與轉化" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Energy Forms and Changes_能量形式與轉化</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/energy-skate-park-basics.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/energy-skate-park-basics/latest/energy-skate-park-basics-128.png" id="simulation-display-thumbnail-energy-skate-park-basics" alt="Screenshot of the simulation Energy Skate Park: Basics_能量滑板競技場：基礎" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Energy Skate Park: Basics_能量滑板競技場：基礎</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/equality-explorer.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/equality-explorer/latest/equality-explorer-128.png" id="simulation-display-thumbnail-equality-explorer" alt="Screenshot of the simulation Equality Explorer_探索等式" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Equality Explorer_探索等式</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/equality-explorer-basics.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/equality-explorer-basics/latest/equality-explorer-basics-128.png" id="simulation-display-thumbnail-equality-explorer-basics" alt="Screenshot of the simulation Equality Explorer: Basics_探索等式：基礎" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Equality Explorer: Basics_探索等式：基礎</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/equality-explorer-two-variables.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/equality-explorer-two-variables/latest/equality-explorer-two-variables-128.png" id="simulation-display-thumbnail-equality-explorer-two-variables" alt="Screenshot of the simulation Equality Explorer: Two Variables_探索等式：兩個變數" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Equality Explorer: Two Variables_探索等式：兩個變數</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/expression-exchange.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/expression-exchange/latest/expression-exchange-128.png" id="simulation-display-thumbnail-expression-exchange" alt="Screenshot of the simulation Expression Exchange_代數的表示法" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Expression Exchange_代數的表示法</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/faradays-law.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/faradays-law/latest/faradays-law-128.png" id="simulation-display-thumbnail-faradays-law" alt="Screenshot of the simulation Faraday&#39;s Law_法拉第定律" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Faraday&#039;s Law_法拉第定律</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/forces-and-motion-basics.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/forces-and-motion-basics/latest/forces-and-motion-basics-128.png" id="simulation-display-thumbnail-forces-and-motion-basics" alt="Screenshot of the simulation Forces and Motion:Basics_力和運動：基礎" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Forces and Motion:Basics_力和運動：基礎</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/fraction-matcher.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/fraction-matcher/latest/fraction-matcher-128.png" id="simulation-display-thumbnail-fraction-matcher" alt="Screenshot of the simulation Fraction Matcher_分數的比較" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Fraction Matcher_分數的比較</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/fractions-equality.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/fractions-equality/latest/fractions-equality-128.png" id="simulation-display-thumbnail-fractions-equality" alt="Screenshot of the simulation Fractions: Equality_分數的介紹：等式" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Fractions: Equality_分數的介紹：等式</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/fractions-intro.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/fractions-intro/latest/fractions-intro-128.png" id="simulation-display-thumbnail-fractions-intro" alt="Screenshot of the simulation Fractions: Intro_分數的介紹" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Fractions: Intro_分數的介紹</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/fractions-mixed-numbers.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/fractions-mixed-numbers/latest/fractions-mixed-numbers-128.png" id="simulation-display-thumbnail-fractions-mixed-numbers" alt="Screenshot of the simulation Fractions: Mixed Numbers_分數的介紹：帶分數" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Fractions: Mixed Numbers_分數的介紹：帶分數</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/friction.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/friction/latest/friction-128.png" id="simulation-display-thumbnail-friction" alt="Screenshot of the simulation Friction_摩擦" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Friction_摩擦</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/function-builder.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/function-builder/latest/function-builder-128.png" id="simulation-display-thumbnail-function-builder" alt="Screenshot of the simulation Function Builder_函數" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Function Builder_函數</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/function-builder-basics.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/function-builder-basics/latest/function-builder-basics-128.png" id="simulation-display-thumbnail-function-builder-basics" alt="Screenshot of the simulation Function Builder: Basics_函數：基礎" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Function Builder: Basics_函數：基礎</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/gases-intro.html" class="simulation-link">
+                      <img class="new-ribbon" src="../../../images/icons/sim-badges/new.png" alt="new-ribbon" width="45" height="51"/>
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/gases-intro/latest/gases-intro-128.png" id="simulation-display-thumbnail-gases-intro" alt="Screenshot of the simulation Gases Intro_氣體概念介紹" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Gases Intro_氣體概念介紹</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/gas-properties.html" class="simulation-link">
+                      <img class="new-ribbon" src="../../../images/icons/sim-badges/new.png" alt="new-ribbon" width="45" height="51"/>
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/gas-properties/latest/gas-properties-128.png" id="simulation-display-thumbnail-gas-properties" alt="Screenshot of the simulation Gas Properties_氣體特性" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Gas Properties_氣體特性</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/gene-expression-essentials.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/gene-expression-essentials/latest/gene-expression-essentials-128.png" id="simulation-display-thumbnail-gene-expression-essentials" alt="Screenshot of the simulation Gene Expression Essentials_基因表現--基本入門" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Gene Expression Essentials_基因表現--基本入門</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/graphing-lines.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/graphing-lines/latest/graphing-lines-128.png" id="simulation-display-thumbnail-graphing-lines" alt="Screenshot of the simulation Graphing Lines_描繪所有直線" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Graphing Lines_描繪所有直線</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/graphing-quadratics.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/graphing-quadratics/latest/graphing-quadratics-128.png" id="simulation-display-thumbnail-graphing-quadratics" alt="Screenshot of the simulation Graphing Quadratics_繪製二次曲線" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Graphing Quadratics_繪製二次曲線</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/graphing-slope-intercept.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/graphing-slope-intercept/latest/graphing-slope-intercept-128.png" id="simulation-display-thumbnail-graphing-slope-intercept" alt="Screenshot of the simulation Graphing Slope-Intercept_圖形的斜率與截距" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Graphing Slope-Intercept_圖形的斜率與截距</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/gravity-and-orbits.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/gravity-and-orbits/latest/gravity-and-orbits-128.png" id="simulation-display-thumbnail-gravity-and-orbits" alt="Screenshot of the simulation Gravity and Orbits_重力與軌道" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Gravity and Orbits_重力與軌道</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/gravity-force-lab.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/gravity-force-lab/latest/gravity-force-lab-128.png" id="simulation-display-thumbnail-gravity-force-lab" alt="Screenshot of the simulation Gravity Force Lab_萬有引力實驗室" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Gravity Force Lab_萬有引力實驗室</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/gravity-force-lab-basics.html" class="simulation-link">
+                      <img class="new-ribbon" src="../../../images/icons/sim-badges/new.png" alt="new-ribbon" width="45" height="51"/>
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/gravity-force-lab-basics/latest/gravity-force-lab-basics-128.png" id="simulation-display-thumbnail-gravity-force-lab-basics" alt="Screenshot of the simulation Gravity Force Lab: Basics_萬有引力實驗室：基礎" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Gravity Force Lab: Basics_萬有引力實驗室：基礎</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/hookes-law.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/hookes-law/latest/hookes-law-128.png" id="simulation-display-thumbnail-hookes-law" alt="Screenshot of the simulation Hooke&#39;s Law_虎克定律" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Hooke&#039;s Law_虎克定律</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/isotopes-and-atomic-mass.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/isotopes-and-atomic-mass/latest/isotopes-and-atomic-mass-128.png" id="simulation-display-thumbnail-isotopes-and-atomic-mass" alt="Screenshot of the simulation Isotopes and Atomic Mass_同位素與原子量" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Isotopes and Atomic Mass_同位素與原子量</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/john-travoltage.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/john-travoltage/latest/john-travoltage-128.png" id="simulation-display-thumbnail-john-travoltage" alt="Screenshot of the simulation John Travoltage_約翰屈伏塔" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">John Travoltage_約翰屈伏塔</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/least-squares-regression.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/least-squares-regression/latest/least-squares-regression-128.png" id="simulation-display-thumbnail-least-squares-regression" alt="Screenshot of the simulation Least-Squares Regression_最小平方法迴歸" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Least-Squares Regression_最小平方法迴歸</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/make-a-ten.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/make-a-ten/latest/make-a-ten-128.png" id="simulation-display-thumbnail-make-a-ten" alt="Screenshot of the simulation Make a Ten_湊到 10" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Make a Ten_湊到 10</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/masses-and-springs.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/masses-and-springs/latest/masses-and-springs-128.png" id="simulation-display-thumbnail-masses-and-springs" alt="Screenshot of the simulation Masses and Springs_質量與彈簧" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Masses and Springs_質量與彈簧</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/masses-and-springs-basics.html" class="simulation-link">
+                      <img class="new-ribbon" src="../../../images/icons/sim-badges/new.png" alt="new-ribbon" width="45" height="51"/>
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/masses-and-springs-basics/latest/masses-and-springs-basics-128.png" id="simulation-display-thumbnail-masses-and-springs-basics" alt="Screenshot of the simulation Masses and Springs: Basics_質量與彈簧：基礎" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Masses and Springs: Basics_質量與彈簧：基礎</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/molarity.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/molarity/latest/molarity-128.png" id="simulation-display-thumbnail-molarity" alt="Screenshot of the simulation Molarity_莫耳濃度" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Molarity_莫耳濃度</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/molecule-polarity.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/molecule-polarity/latest/molecule-polarity-128.png" id="simulation-display-thumbnail-molecule-polarity" alt="Screenshot of the simulation Molecule Polarity_分子的極性" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Molecule Polarity_分子的極性</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/molecules-and-light.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/molecules-and-light/latest/molecules-and-light-128.png" id="simulation-display-thumbnail-molecules-and-light" alt="Screenshot of the simulation Molecules and Light_分子與光" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Molecules and Light_分子與光</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/molecule-shapes.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/molecule-shapes/latest/molecule-shapes-128.png" id="simulation-display-thumbnail-molecule-shapes" alt="Screenshot of the simulation Molecule Shapes_分子形狀" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Molecule Shapes_分子形狀</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/molecule-shapes-basics.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/molecule-shapes-basics/latest/molecule-shapes-basics-128.png" id="simulation-display-thumbnail-molecule-shapes-basics" alt="Screenshot of the simulation Molecule Shapes: Basics_分子形狀：基礎" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Molecule Shapes: Basics_分子形狀：基礎</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/neuron.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/neuron/latest/neuron-128.png" id="simulation-display-thumbnail-neuron" alt="Screenshot of the simulation Neuron_神經元" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Neuron_神經元</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/ohms-law.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/ohms-law/latest/ohms-law-128.png" id="simulation-display-thumbnail-ohms-law" alt="Screenshot of the simulation Ohm&#39;s Law_歐姆定律" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Ohm&#039;s Law_歐姆定律</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/pendulum-lab.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/pendulum-lab/latest/pendulum-lab-128.png" id="simulation-display-thumbnail-pendulum-lab" alt="Screenshot of the simulation Pendulum Lab_鐘擺實驗室" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Pendulum Lab_鐘擺實驗室</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/ph-scale.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/ph-scale/latest/ph-scale-128.png" id="simulation-display-thumbnail-ph-scale" alt="Screenshot of the simulation pH Scale_酸鹼性" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">pH Scale_酸鹼性</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/ph-scale-basics.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/ph-scale-basics/latest/ph-scale-basics-128.png" id="simulation-display-thumbnail-ph-scale-basics" alt="Screenshot of the simulation pH Scale: Basics_酸鹼性：基礎" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">pH Scale: Basics_酸鹼性：基礎</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/plinko-probability.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/plinko-probability/latest/plinko-probability-128.png" id="simulation-display-thumbnail-plinko-probability" alt="Screenshot of the simulation Plinko Probability_二項分佈彈珠台機率" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Plinko Probability_二項分佈彈珠台機率</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/projectile-motion.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/projectile-motion/latest/projectile-motion-128.png" id="simulation-display-thumbnail-projectile-motion" alt="Screenshot of the simulation Projectile Motion_拋射運動" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Projectile Motion_拋射運動</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/proportion-playground.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/proportion-playground/latest/proportion-playground-128.png" id="simulation-display-thumbnail-proportion-playground" alt="Screenshot of the simulation Proportion Playground_比例遊樂場" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Proportion Playground_比例遊樂場</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/reactants-products-and-leftovers.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/reactants-products-and-leftovers/latest/reactants-products-and-leftovers-128.png" id="simulation-display-thumbnail-reactants-products-and-leftovers" alt="Screenshot of the simulation Reactants, Products and Leftovers_反應物, 生成物及剩餘物" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Reactants, Products and Leftovers_反應物, 生成物及剩餘物</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/resistance-in-a-wire.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/resistance-in-a-wire/latest/resistance-in-a-wire-128.png" id="simulation-display-thumbnail-resistance-in-a-wire" alt="Screenshot of the simulation Resistance in a Wire_電線的電阻" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Resistance in a Wire_電線的電阻</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/rutherford-scattering.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/rutherford-scattering/latest/rutherford-scattering-128.png" id="simulation-display-thumbnail-rutherford-scattering" alt="Screenshot of the simulation Rutherford Scattering_拉塞福散射實驗" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Rutherford Scattering_拉塞福散射實驗</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/states-of-matter.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/states-of-matter/latest/states-of-matter-128.png" id="simulation-display-thumbnail-states-of-matter" alt="Screenshot of the simulation States of Matter_物質三態" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">States of Matter_物質三態</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/states-of-matter-basics.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/states-of-matter-basics/latest/states-of-matter-basics-128.png" id="simulation-display-thumbnail-states-of-matter-basics" alt="Screenshot of the simulation States of Matter: Basics_物質三態：基礎" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">States of Matter: Basics_物質三態：基礎</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/trig-tour.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/trig-tour/latest/trig-tour-128.png" id="simulation-display-thumbnail-trig-tour" alt="Screenshot of the simulation Trig Tour_三角函數之旅" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Trig Tour_三角函數之旅</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/under-pressure.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/under-pressure/latest/under-pressure-128.png" id="simulation-display-thumbnail-under-pressure" alt="Screenshot of the simulation Under Pressure_壓力之下" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Under Pressure_壓力之下</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/unit-rates.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/unit-rates/latest/unit-rates-128.png" id="simulation-display-thumbnail-unit-rates" alt="Screenshot of the simulation Unit Rates_單位比例" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Unit Rates_單位比例</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/vector-addition.html" class="simulation-link">
+                      <img class="new-ribbon" src="../../../images/icons/sim-badges/new.png" alt="new-ribbon" width="45" height="51"/>
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/vector-addition/latest/vector-addition-128.png" id="simulation-display-thumbnail-vector-addition" alt="Screenshot of the simulation Vector Addition_向量的加法" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Vector Addition_向量的加法</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/vector-addition-equations.html" class="simulation-link">
+                      <img class="new-ribbon" src="../../../images/icons/sim-badges/new.png" alt="new-ribbon" width="45" height="51"/>
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/vector-addition-equations/latest/vector-addition-equations-128.png" id="simulation-display-thumbnail-vector-addition-equations" alt="Screenshot of the simulation Vector Addition: Equations_向量加法：方程式" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Vector Addition: Equations_向量加法：方程式</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/wave-interference.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/wave-interference/latest/wave-interference-128.png" id="simulation-display-thumbnail-wave-interference" alt="Screenshot of the simulation Wave Interference_波的干涉" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Wave Interference_波的干涉</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/wave-on-a-string.html" class="simulation-link">
+                      
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/wave-on-a-string/latest/wave-on-a-string-128.png" id="simulation-display-thumbnail-wave-on-a-string" alt="Screenshot of the simulation Wave on a String_繩波" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Wave on a String_繩波</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr><tr>
+                <td class="simulation-list-item">
+                    <a href="../../simulation/waves-intro.html" class="simulation-link">
+                      <img class="new-ribbon" src="../../../images/icons/sim-badges/new.png" alt="new-ribbon" width="45" height="51"/>
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/waves-intro/latest/waves-intro-128.png" id="simulation-display-thumbnail-waves-intro" alt="Screenshot of the simulation Waves Intro_波的介紹" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Waves Intro_波的介紹</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td><td class="simulation-list-item">
+                    <a href="../../simulation/number-line-integers.html" class="simulation-link">
+                      <img class="new-ribbon" src="../../../images/icons/sim-badges/new.png" alt="new-ribbon" width="45" height="51"/>
+                      <img class="simulation-list-thumbnail" src="../../../sims/html/number-line-integers/latest/number-line-integers-128.png" id="simulation-display-thumbnail-number-line-integers" alt="Screenshot of the simulation 數線：整數" width="128" height="84"/><br/>
+                        <strong><span class="simulation-list-title">Number Line: Integers_數線：整數</span></strong><br/>
+                        <span class="sim-display-badge sim-badge-html"></span>
+                    </a>
+                </td>
+            </tr>
+        </table>
+        <br/>
+    </div>
+</div>
+    </div>
+  </div>
+</div>
+    </div>
+
+  </div>
+  <div id="react-root"></div>
+
+  <div id="page-footer" class="ltr">
+  <div class="main-footer">
+    <div>
+  
+    <hr>
+    <div id="social-footer" dir="ltr">
+      <span>
+        <a class="footer-link" href="http://www.facebook.com/pages/PhET-Interactive-Simulations/161503243888932?v=wall" rel="external nofollow" title="在 Facebook 按讚" aria-label="在 Facebook 按讚" dir="ltr">
+          <i class="fa fa-facebook"></i>
+        </a>
+      </span><span>
+        <a class="footer-link" href="http://twitter.com/PhETSims" rel="external nofollow" title="在 Twitter 上跟隨我們" aria-label="在 Twitter 上跟隨我們" dir="ltr">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </span><span>
+        <a class="footer-link" href="https://www.instagram.com/phetsims/" rel="external nofollow" title="在 Instagram 跟隨我們" aria-label="在 Instagram 跟隨我們" dir="ltr">
+          <i class="fa fa-instagram"></i>
+        </a>
+      </span><span>
+        <a class="footer-link" href="https://www.youtube.com/channel/UCMRZ0-ci4ifGBF1bJvrcDRQ" rel="external nofollow" title="在 Youtube 上看我們的影片" aria-label="在 Youtube 上看我們的影片" dir="ltr">
+          <i class="fa fa-youtube-play"></i>
+        </a>
+      </span><span>
+        <a class="footer-link" href="http://www.pinterest.com/PhETSims" rel="external nofollow" title="在 Pinterest 跟隨我們" aria-label="在 Pinterest 跟隨我們" dir="ltr">
+          <i class="fa fa-pinterest-p"></i>
+        </a>
+      </span>
+    </div>
+    <hr>
+  
+</div>
+    <div id="footer-nav-links">
+      <div>
+        <a href="../../about.html"><span class="floating-link">關於 PhET</span></a>
+        <a href="../../about/team.html"><span class="floating-link">我們的團隊</span></a>
+        <a href="../../about/sponsors.html"><span class="floating-link">贊助單位</span></a>
+      </div>
+      <div>
+        <a href="https://phet.colorado.edu/zh_TW/offline-access"><span class="floating-link">離線版</span></a>
+        <a href="../../help-center/getting-started.html"><span class="floating-link">Help Center</span></a>
+        <a href="../../about/contact.html"><span class="floating-link">聯繫</span></a>
+      </div>
+      <div>
+        <a href="../../about/source-code.html"><span class="floating-link">原始碼</span></a>
+        <a href="../../licensing.html"><span class="floating-link">授權</span></a>
+        <a href="../../for-translators.html"><span class="floating-link">翻譯我們的教學</span></a>
+      </div>
+    </div>
+    <div class="other-languages">
+      <div class="translation-links">
+  
+
+  <span>
+      <a href="html.html"><span class="current-locale">正體中文</span></a>
+  </span><span>
+      <a href="../../../en/simulations/category/html.html"><span>English</span></a>
+  </span>
+
+  <div style="display: none" id="locale" locale="zh_TW"></div>
+
+
+</div>
+      <div class="translation-credits">本網站及模擬之正體中文部份，由<a href="http://ezgo.westart.tw/">臺灣 PhET 社群</a>進行翻譯與維護<br><br/>請見<a href="http://iychiang1809.blogspot.tw/2015/04/phet.html">翻譯與貢獻者名單</a></div>
+    </div>
+
+    <div id="app-badges">
+      <span>
+  <a href="https://apps.apple.com/tw/app/phet-simulations/id1134126831">
+    <img style="width: 120px;" src="../../../images/ios-app-store-badges/HKTW(TC)/badge.svg">
+  </a>
+</span>
+      
+    </div>
+
+  </div>
+  <div class="footer-highlight-background">
+    <div class="footer-bottom">
+      <div class="left">
+        <table>
+          <tr>
+            <td class="sponsor">
+              <a href="http://www.hewlett.org/" rel="external" dir="ltr">
+                <img src="../../../images/support/Hewlett_logo_footer_vv.png"
+                     alt="Hewlett Foundation" width="100" />
+              </a>
+            </td>
+            <td class="sponsor">
+              <a href="http://www.nsf.gov/" rel="external" dir="ltr">
+                <img src="../../../images/support/NSF_logo_footer-01.png"
+                     alt="National Science Foundation" width="56" />
+              </a>
+            </td>
+            <td class="sponsor">
+              <a href="https://www.google.org/" rel="external" dir="ltr">
+                <img src="../../../images/support/google.org_dark.png"
+                     alt="Google.org" width="131" />
+              </a>
+            </td>
+            <td class="sponsor">
+              <a href="http://www.moore.org/" rel="external" dir="ltr">
+                <img src="../../../images/support/Moore_Foundation_logo_footer-01.png"
+                     alt="Moore Foundation" width="100" />
+              </a>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="right">
+        <div id="PhET-logo">
+          <a href="../../index.html">
+            <img src="../../../images/phet-logo-trademarked-black.png" alt="PhET Home Page" title="Go to the PhET home page" style="border: none;"
+                 width="90" id="phet-logo-main-image">
+          </a>
+        </div>
+        <div class="copyright">
+          <a href="../../licensing.html">
+            <span>&copy;<span>2020 University of Colorado. </span></span>
+            <br />
+            部份權利保留
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script type="text/javascript" src="../../../js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="../../../js/phet-v50-min.js"></script>
+</div>
+</body>
+
+<!-- Mirrored from phet.colorado.edu/zh_TW/simulations/category/html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Apr 2020 03:28:07 GMT -->
+</html>
+

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:esi="http://java.sun.com/JSP/Page" xml:lang="zh" lang="zh">
+
+<!-- Mirrored from phet.colorado.edu/zh_TW/help-center/running-sims/android by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Apr 2020 04:27:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>PhET Help Center - Running Sims - Android</title>
+  
+  
+  <link rel="stylesheet" href="../../../css/font-awesome/css/font-awesome.min-4.7.css">
+  <link rel="stylesheet" type="text/css" href="../../../css/phet-v77-min.css"/>
+
+  <!-- class edu.colorado.phet.website.content.troubleshooting.HelpCenterRunningSimsPage -->
+  <!-- host phet.colorado.edu -->
+  
+
+  
+
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+      rel="stylesheet">
+
+  <script type="text/javascript">
+    function initBreakpoint() {
+      var body = document.querySelector( 'body' );
+      var menuParents = document.querySelectorAll( '#page-nav-menu ul[role=menubar] .nav-menu-parent-text' );
+
+      if ( body && menuParents ) {
+        clearInterval( isLargeViewInterval );
+        window.phet = window.phet || {};
+        window.phet.cssBreakpoint = 40 + // page header container padding
+                                    220 + // phet and cu logos
+                                    75 + // search and user menus
+                                    ( body.className.indexOf( 'rtl' ) >= 0 ? 30 : 0 ) + // RTL languages need to break 30 pixels earlier somehow
+                                    Array.prototype.slice.call( menuParents )
+                                      .map( function( item ) {
+                                        return item.offsetWidth
+                                               - parseInt( window.getComputedStyle( item ).paddingRight )
+                                               - parseInt( window.getComputedStyle( item ).paddingLeft )
+                                               + 22; // 22 is horizontal padding + horizontal margin on nav-menu-parent-text in wide view
+                                      } )
+                                      .reduce( function( accumulator, currentItem ) { return accumulator + currentItem; }, 0 ); // dropdown menu width, flexible due to translations
+        const mediaString = '(min-width: ' + window.phet.cssBreakpoint + 'px)';
+        window.phet.isLargeView = function() {
+          return window.matchMedia( mediaString ).matches;
+        };
+
+        document.getElementById( 'page-wrapper' ).className = window.phet.isLargeView() ? 'wide' : 'narrow';
+        document.getElementById( 'page-header-container-wrapper' ).className = window.phet.isLargeView() ? 'expanded' : 'collapsed';
+      }
+    }
+
+    var isLargeViewInterval = setInterval( initBreakpoint, 50 );
+  </script>
+
+    <link rel="canonical" href="android.html"/>
+  
+        <meta property="og:site_name" content="PhET"/><meta property="twitter:site" content="@PhETsims"/><meta property="og:title" content="PhET 互動式模擬教學"/><meta property="twitter:title" content="PhET 互動式模擬教學"/><meta property="og:url" content="https://phet.colorado.edu/zh_TW/help-center/running-sims/android"/><meta property="twitter:card" content="summary"/><meta property="og:image" content="https://phet.colorado.edu/images/phet-social-media-logo.png"/><meta property="twitter:image" content="https://phet.colorado.edu/images/phet-social-media-logo.png"/><meta property="og:description" content="PhET 是一個延伸教育<a {0}>研究</a>專案計畫，透過動畫模擬遊戲的方式吸引學生探索與發現數學、科學方面的各種知識。它是於 2002 年由諾貝爾經濟學獎得主，科羅拉多大學的 Carl Wieman 教授所發起的。"/><meta property="twitter:description" content="PhET 是一個延伸教育<a {0}>研究</a>專案計畫，透過動畫模擬遊戲的方式吸引學生探索與發現數學、科學方面的各種知識。它是於 2002 年由諾貝爾經濟學獎得主，科羅拉多大學的 Carl Wieman 教授所發起的。"/>
+    
+    <link rel="stylesheet" href="../../../footer.css">
+  </head>
+<body dir="ltr" class="ltr" id="offline-installer-body">
+<div id="page-wrapper" class="pre-load">
+  <div id="skipNav">
+    <a href="#main-content" accesskey="0" id="skipper" tabindex="1">
+      跳至主頁
+    </a>
+  </div>
+
+  
+
+  <div id="page-header" class="ltr">
+
+    
+
+    <div id="page-header-container-wrapper">
+      <div id="page-header-container" role="banner">
+        <div id="page-header-left">
+          <a href="../../index.html" class="phet-logo-link">
+            <div class="phet-logo">
+              <img src="../../../images/phet-logo-trademarked.png"
+                   alt="PhET Home Page"
+                   title="Go to the PhET home page"
+              />
+            </div>
+          </a>
+          <div class="cu-logo">
+            <a href="http://www.colorado.edu/" target="_blank">
+              <div class="cu-logo-image-clip">
+                <img src="../../../images/logos/cu_logo.png" alt="University of Colorado"/>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <a id="collapsible-menu-toggle" role="button" aria-haspopup="menu" aria-expanded="false" aria-label="切換主選單">
+          <div id="toggle-container">
+          <span id="nw-rotate" class="rotate">
+            <span id="nw-translate" class="line"></span>
+          </span>
+            <span id="ne-rotate" class="rotate">
+            <span id="ne-translate" class="line"></span>
+          </span>
+            <span id="sw-rotate" class="rotate">
+            <span id="sw-translate" class="line"></span>
+          </span>
+            <span id="se-rotate" class="rotate">
+            <span id="se-translate" class="line"></span>
+          </span>
+            <span id="east-center-line" class="line center-line"></span>
+            <span id="west-center-line" class="line center-line"></span>
+          </div>
+        </a>
+
+        <div id="page-header-menus" class="ltr">
+          <div id="collapsible-menu">
+            <div id="search-container-mobile" role="search"></div>
+            <nav id="page-nav-menu" role="navigation">
+  <ul role="menubar">
+    <li class="nav-menu-item">
+      <a class="nav-menu-parent has-menu nav0" role="menuitem" id="nav.simulations" aria-haspopup="menu" aria-expanded="false">
+        <span class="nav-menu-parent-text">教學</span></a>
+      <div class="nav-menu-children">
+        <ul role="menu" aria-labelledby="nav.simulations">
+          <li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-new" href="../../simulations/category/new.html">
+            <span class="nav-menu-child-text">新加入的教學主題</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-html" href="../../simulations/category/html.html">
+            <span class="nav-menu-child-text">HTML5</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-physics" href="../../simulations/category/physics.html">
+            <span class="nav-menu-child-text">物理</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-biology" href="../../simulations/category/biology.html">
+            <span class="nav-menu-child-text">生物</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-chemistry" href="../../simulations/category/chemistry.html">
+            <span class="nav-menu-child-text">化學</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-earth-science" href="../../simulations/category/earth-science.html">
+            <span class="nav-menu-child-text">地球科學</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-math" href="../../simulations/category/math.html">
+            <span class="nav-menu-child-text">數學</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-by-level" href="../../simulations/category/by-level.html">
+            <span class="nav-menu-child-text">依年級區分教學主題</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-by-device" href="../../simulations/category/by-device.html">
+            <span class="nav-menu-child-text">依裝置區分</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-all" href="../../simulations.html">
+            <span class="nav-menu-child-text">所有的教學主題</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-simulations-translated" href="../../simulations/translated.html">
+            <span class="nav-menu-child-text">翻譯教學主題</span></a></li>
+        </ul>
+      </div>
+    </li><li class="nav-menu-item">
+      <a class="nav-menu-parent has-menu nav0" role="menuitem" id="nav.teaching" aria-haspopup="menu" aria-expanded="false">
+        <span class="nav-menu-parent-text">教學</span></a>
+      <div class="nav-menu-children">
+        <ul role="menu" aria-labelledby="nav.teaching">
+          <li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-about-general" href="../../teaching-resources.html">
+            <span class="nav-menu-child-text">關於</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-forTeachers-tipsForUsingPhet" href="../../teaching-resources/tipsForUsingPhet.html">
+            <span class="nav-menu-child-text">使用 PhET 的小提示</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-teacherIdeas-browse" href="https://phet.colorado.edu/zh_TW/teaching-resources/browse-activities">
+            <span class="nav-menu-child-text">瀏覽活動</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-teacherIdeas-submit" href="https://phet.colorado.edu/zh_TW/teaching-resources/submit-activity">
+            <span class="nav-menu-child-text">分享您的活動</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-teacherIdeas-manage" href="https://phet.colorado.edu/zh_TW/teaching-resources/manage-activities">
+            <span class="nav-menu-child-text">我的活動</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-workshops" href="../../teaching-resources/workshops.html">
+            <span class="nav-menu-child-text">研習</span></a></li>
+        </ul>
+      </div>
+    </li><li class="nav-menu-item">
+      <a class="nav-menu-parent nav0" role="menuitem" href="../../research.html">
+        <span class="nav-menu-parent-text">研究</span></a>
+      <div class="nav-menu-children empty">
+        
+      </div>
+    </li><li class="nav-menu-item">
+      <a class="nav-menu-parent has-menu nav0" role="menuitem" id="nav.accessibility" aria-haspopup="menu" aria-expanded="false">
+        <span class="nav-menu-parent-text">無障礙輔助</span></a>
+      <div class="nav-menu-children">
+        <ul role="menu" aria-labelledby="nav.accessibility">
+          <li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-about-general" href="../../accessibility.html">
+            <span class="nav-menu-child-text">關於</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-accessibility-simulations" href="../../accessibility/prototypes.html">
+            <span class="nav-menu-child-text">可使用的模擬教材</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-accessibility-research" href="../../accessibility/research.html">
+            <span class="nav-menu-child-text">研究與設計</span></a></li><li class="nav-menu-children-item">
+            <a class="nav-menu-child" role="menuitem" tabindex="-1" id="nav-location-nav-accessibility-implementation" href="../../accessibility/implementation.html">
+            <span class="nav-menu-child-text">技術實作</span></a></li>
+        </ul>
+      </div>
+    </li><li class="nav-menu-item featured">
+      <a class="nav-menu-parent nav0" role="menuitem" href="../../donate.html">
+        <span class="nav-menu-parent-text">贊助我們</span></a>
+      <div class="nav-menu-children empty">
+        
+      </div>
+    </li>
+  </ul>
+
+</nav>
+            <div id="search" role="search">
+              
+              <div id="search-container-desktop" class="search-hidden"></div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--This is a temporary placeholder-->
+  <div style="display: none;">
+    
+  </div>
+
+  <div>此版本於 2020/4/27 建立。更新程式可以從<a href="https://phet.colorado.edu/zh_TW/offline-access">網站上</a>取得。</div>
+
+  <div id="page-content" role="main" class="ltr">
+    
+  <div dir="ltr">
+    <div>
+  <div class="help-center standard-content" dir="ltr">
+    <div>
+  <div style="padding-bottom: 20px; width: 700px">
+    <div class="help-center-nav" style="margin-left: 0">
+      <a href="../getting-started.html" title="Getting Started">
+        <svg id="getting-started-icon" version="1.1"  xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
+             width="99.419px" height="99.42px" viewBox="0 0 99.419 99.42" enable-background="new 0 0 99.419 99.42" xml:space="preserve">
+          <g>
+            <path fill="#65CDF7" d="M0,49.71C0,22.256,22.254,0,49.709,0S99.42,22.256,99.42,49.71S77.164,99.42,49.709,99.42S0,77.164,0,49.71
+              z M23.098,32.16v35.1c0,5.005,4.057,9.062,9.062,9.062h35.1c5.004,0,9.061-4.058,9.061-9.062v-35.1
+              c0-5.005-4.057-9.062-9.061-9.062h-35.1C27.154,23.098,23.098,27.155,23.098,32.16z"/>
+            <path d="M47.381,68.483c-0.865-0.216-1.516-0.693-1.912-1.325c-0.172-0.122-0.34-0.251-0.506-0.389L32.637,56.615
+              c-2.605-2.148-3.578-5.322-2.172-7.091c1.408-1.769,4.662-1.46,7.27,0.688l10.389,8.56l13.162-24.812
+              c1.127-2.125,3.785-3.412,5.936-2.875s2.98,2.694,1.852,4.819L53.314,65.609c-0.162,0.306-0.357,0.595-0.576,0.863
+              c-0.105,0.359-0.273,0.691-0.508,0.984c-0.719,0.904-1.922,1.266-3.275,1.115C48.42,68.636,47.887,68.609,47.381,68.483z"/>
+            <path fill="#65CDF7" stroke="#65CDF7" stroke-width="5.4788" stroke-miterlimit="3.8636" d="M47.381,68.483
+              c-0.865-0.216-1.516-0.693-1.912-1.325c-0.172-0.122-0.34-0.251-0.506-0.389L32.637,56.615c-2.605-2.148-3.578-5.322-2.172-7.091
+              c1.408-1.769,4.662-1.46,7.27,0.688l10.389,8.56l13.162-24.812c1.127-2.125,3.785-3.412,5.936-2.875s2.98,2.694,1.852,4.819
+              L53.314,65.609c-0.162,0.306-0.357,0.595-0.576,0.863c-0.105,0.359-0.273,0.691-0.508,0.984c-0.719,0.904-1.922,1.266-3.275,1.115
+              C48.42,68.636,47.887,68.609,47.381,68.483z"/>
+          </g>
+        </svg>
+        <div id="getting-started-text" class="help-center-main">
+          Getting Started
+        </div>
+      </a>
+    </div>
+
+    <div class="help-center-nav">
+      <a href="../running-sims.html" title="Running Sims" class="selected">
+        <svg id="running-sims-icon" version="1.1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
+             width="99.42px" height="99.42px" viewBox="0 8 99.42 99.42" enable-background="new 0 8 99.42 99.42" xml:space="preserve">
+          <g>
+            <path fill="#65CDF7" d="M0,57.71C0,30.256,22.256,8,49.71,8c27.455,0,49.71,22.256,49.71,49.71s-22.256,49.71-49.71,49.71
+              S0,85.165,0,57.71z M29.125,83.594c0,3.48,2.82,6.302,6.301,6.302c1.188,0,2.298-0.328,3.248-0.896l42.915-24.805
+              c2.211-0.979,3.754-3.19,3.754-5.764c0-2.382-1.322-4.455-3.27-5.536L38.959,27.989c-1.006-0.68-2.218-1.075-3.521-1.075
+              c-3.467,0-6.279,2.798-6.303,6.258v50.052L29.125,83.594z"/>
+          </g>
+        </svg>
+        <div id="running-sims-text" class="help-center-main">
+          Running Sims
+        </div>
+      </a>
+    </div>
+
+    <div class="help-center-nav">
+      <a class="quick-tips" href="../quick-tips.html" title="Quick Tips">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100px"
+           height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+          <g>
+            <g>
+              <circle cx="49.957" cy="50.043" r="50.043"/>
+              <g>
+                <path fill="#FEFEFE" d="M43.56,79.061v1.011l2.26,3.446h8.263l2.498-3.565l-0.06-0.892H43.56z M43.501,70.558v4.341h12.902
+                  l0.059-4.341H43.501z M57.71,66.276c3.092-6.776,4.757-8.085,5.232-8.857c0.477-0.772,5.471-4.222,6.303-13.734
+                  c0.832-9.513-7.315-20.215-19.145-20.215c-11.832,0-17.064,8.621-18.907,15.161c-1.843,6.54,1.546,14.21,4.341,16.944
+                  c2.794,2.735,6.658,10.762,6.658,10.762L57.71,66.276z M39.339,70.558c0,0-1.308-5.171-4.875-9.453
+                  c-3.567-4.281-7.848-9.571-8.026-18.133c-0.178-8.562,6.481-23.96,23.366-23.664c0,0,20.156-0.951,23.486,20.571
+                  c0,0,1.188,7.135-2.259,13.438c-3.451,6.302-8.92,10.227-10.348,17.241v10.107c0,0-3.151,5.946-4.221,6.541
+                  c-1.07,0.594-1.547,0.416-1.547,0.416h-9.81c0,0-1.249,0.415-2.14-0.894c-0.892-1.308-3.389-4.993-3.389-4.993
+                  s-0.297-0.892-0.297-2.2L39.339,70.558z M42.133,35.48c-3.45,3.45-2.794,7.253-2.794,7.253s-0.297,2.26-2.199,2.14
+                  c-1.903-0.118-2.082-1.545-2.082-2.913c0-1.367,1.011-5.767,3.329-8.622c2.319-2.853,7.135-5.648,11.654-5.588
+                  c0,0,2.199,0.356,2.021,2.259c-0.177,1.903-2.199,2.021-2.199,2.021S46.117,31.496,42.133,35.48z"/>
+                <path fill="#FEFEFE" d="M26.11,28.612l-1.933,3.806l-11.624-6.749c0,0-0.713-0.475-0.208-1.218s1.189-1.992,1.189-1.992
+                  s0.624-0.891,1.576-0.148L26.11,28.612z"/>
+                <path fill="#FEFEFE" d="M74.059,28.612l1.932,3.806l11.624-6.749c0,0,0.712-0.475,0.208-1.218
+                  c-0.506-0.743-1.189-1.992-1.189-1.992s-0.624-0.891-1.576-0.148L74.059,28.612z"/>
+                <path fill="#FEFEFE" d="M22.231,42.905l0.204,4.262l-14.51-0.11c0,0-0.856-0.06-0.784-0.957c0.071-0.896,0.048-2.319,0.048-2.319
+                  s0.101-1.084,1.295-0.91L22.231,42.905z"/>
+                <path fill="#FEFEFE" d="M77.795,42.905l-0.204,4.262l14.511-0.11c0,0,0.854-0.06,0.782-0.957
+                  c-0.069-0.896-0.046-2.319-0.046-2.319s-0.102-1.084-1.296-0.91L77.795,42.905z"/>
+                <path fill="#FEFEFE" d="M25.681,56.343l2.298,3.597l-13.354,8.015c0,0-0.771,0.373-1.156-0.438
+                  c-0.384-0.812-1.112-2.036-1.112-2.036s-0.452-0.991,0.671-1.435L25.681,56.343z"/>
+                <path fill="#FEFEFE" d="M74.405,56.343l-2.297,3.597l13.354,8.015c0,0,0.772,0.373,1.156-0.438
+                  c0.384-0.812,1.112-2.036,1.112-2.036s0.451-0.991-0.671-1.435L74.405,56.343z"/>
+              </g>
+            </g>
+          </g>
+        </svg>
+
+        <div id="quick-tips-text" class="help-center-main">
+          Quick Tips
+        </div>
+      </a>
+    </div>
+
+    <div class="help-center-nav">
+      <a href="../offline.html" title="Offline">
+        <svg version="1.1" id="offline-icon" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
+             width="99px" height="99px" viewBox="0 0 99 99" enable-background="new 0 0 99 99" xml:space="preserve">
+          <g>
+            <path fill="#65CDF7" d="M0,49.5C0,22.161,22.161,0,49.5,0C76.838,0,99,22.161,99,49.5S76.838,99,49.5,99C22.161,99,0,76.839,0,49.5
+              z M87.113,54.49v-1.885c0-4.165-3.191-7.542-7.128-7.542H57.548L47.134,62.031h32.853C83.922,62.031,87.113,58.655,87.113,54.49z
+               M11.357,44.722v1.886c0,4.165,3.191,7.541,7.128,7.541h22.438l10.414-16.968H18.484C14.549,37.181,11.357,40.558,11.357,44.722z"
+              />
+          </g>
+        </svg>
+        <div id="offline-text" class="help-center-main">
+          Offline
+        </div>
+      </a>
+    </div>
+
+    <div class="help-center-nav">
+      <a href="../account.html" title="Account">
+        <svg version="1.1" id="account-icon" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
+             width="99.271px" height="99.271px" viewBox="0 0 99.271 99.271" enable-background="new 0 0 99.271 99.271" xml:space="preserve">
+          <g>
+            <path fill="#65CDF7" d="M0,49.635C0,22.223,22.223,0,49.635,0c27.414,0,49.637,22.223,49.637,49.635
+              c0,27.414-22.223,49.637-49.637,49.637C22.223,99.271,0,77.049,0,49.635z M32.105,44.273c-3.145,0-6.252,1.539-6.545,6.404
+              c-0.596,9.854-1.033,20.006-1.334,30.188h50.818c-0.297-10.178-0.732-20.326-1.326-30.174C73.596,48.664,73,46.992,71.75,45.83
+              c-2.611-2.428-13.463-1.553-17.102-1.553L32.105,44.273z M34.135,25.982c0,8.561,6.939,15.5,15.5,15.5s15.5-6.939,15.5-15.5
+              s-6.939-15.5-15.5-15.5S34.135,17.422,34.135,25.982z"/>
+          </g>
+        </svg>
+        <div id="account-text" class="help-center-main">
+          Account
+        </div>
+      </a>
+    </div>
+
+    <div class="help-center-nav">
+      <a href="../translation.html" title="Translation">
+        <svg version="1.1" id="translation-icon" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
+             width="99px" height="99px" viewBox="0 0 99 99" enable-background="new 0 0 99 99" xml:space="preserve">
+          <path fill="#65CDF7" d="M49.5,0C22.162,0,0,22.162,0,49.5S22.162,99,49.5,99C76.838,99,99,76.838,99,49.5S76.838,0,49.5,0z
+             M36.64,66.726c-2,2.071-5.518,1.786-7.857-0.638L8.896,45.487C8.32,44.893,7.87,44.222,7.547,43.52
+            c-0.429-0.758-0.627-1.625-0.601-2.518c-0.039-1.371,0.398-2.684,1.334-3.654c0.103-0.105,0.209-0.205,0.32-0.301
+            c0.116-0.129,0.238-0.256,0.366-0.379l20.601-19.887c2.423-2.339,6.067-2.614,8.139-0.614c2.072,2,1.786,5.519-0.637,7.857
+            L26.271,34.447h24.838c4.255,0,7.705,2.949,7.705,6.588c0,3.637-3.45,6.585-7.705,6.585h-25.67l10.585,10.967
+            C38.364,61.01,38.639,64.653,36.64,66.726z M90.399,61.951c-0.115,0.13-0.238,0.256-0.365,0.38l-20.6,19.886
+            c-2.424,2.34-6.068,2.615-8.14,0.616c-2.071-2-1.786-5.519,0.638-7.857l10.797-10.424H47.891c-4.255,0-7.705-2.949-7.705-6.587
+            s3.449-6.586,7.705-6.586h25.67L62.975,40.414c-2.34-2.424-2.615-6.068-0.615-8.141s5.518-1.786,7.857,0.638l19.887,20.601
+            c0.576,0.596,1.026,1.266,1.35,1.969c0.429,0.756,0.626,1.624,0.6,2.518c0.039,1.371-0.398,2.684-1.334,3.653
+            C90.617,61.758,90.509,61.857,90.399,61.951z"/>
+        </svg>
+        <div id="translation-text" class="help-center-main">
+          Translation
+        </div>
+      </a>
+    </div>
+    <br/>
+
+    <div id="running-sims-box" style="display: none">
+      <div id="running-sims-images">
+        <span class="running-sims-icon">
+          <a href="general.html">
+            <i class="fa fa-desktop"></i>
+            <span class="system-name-word">General</span>
+          </a>
+        </span>
+        <span class="running-sims-icon">
+          <a href="mac.html">
+            <i class="fa fa-apple"></i>
+            <span class="system-name-word">macOS</span>
+          </a>
+        </span>
+        <span class="running-sims-icon">
+          <a href="windows.html">
+            <i class="fa fa-windows"></i>
+            <span class="system-name-word">Windows</span>
+          </a>
+        </span>
+        <span class="running-sims-icon">
+          <a href="tablet.html">
+            <i class="fa fa-tablet"></i>
+            <span class="system-name-word">iOS</span>
+          </a>
+        </span>
+        <span class="running-sims-icon">
+          <a href="chromebook.html">
+            <i class="fa fa-chrome"></i>
+            <span class="system-name-word">Chromebook</span>
+          </a>
+          </span>
+        <span class="running-sims-icon">
+          <a href="android.html" class="selected">
+            <i class="fa fa-android"></i>
+            <span class="system-name-word">Android</span>
+          </a>
+        </span>
+        <span class="running-sims-icon">
+          <a href="linux.html">
+            <i class="fa fa-linux"></i>
+            <span class="system-name-word">Linux</span>
+          </a>
+        </span>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    if ( window.location.pathname.indexOf( 'running-sims' ) >= 0 ) {
+      document.getElementById( 'running-sims-box' ).style.display = 'block';
+    }
+  </script>
+</div>
+    <div style="display: block;">
+      
+      <div style="display: inline-block;">
+        <div>
+  <h2 class="question triangle-right-blue" id="q52-header">
+    <button class="expandable-text-link click-area-expand" onclick="this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='true'?false:true); return window.phet.toggleExpandableText('q52')" aria-controls="q52" aria-expanded="false" aria-selected="false">
+      <span>How do I download the PhET Android App?</span>
+    </button>
+  </h2>
+  
+</div>
+        <div class="answer" id="q52"><p><a href="https://play.google.com/store/apps/details?id=edu.colorado.phet.android_app&amp;hl=en">The PhET Android app</a> allows native offline use of all the HTML5 sims and can be downloaded from the <a href="https://play.google.com/store/apps/details?id=edu.colorado.phet.android_app&amp;hl=en">Play Store</a>. The app is $0.99 and proceeds fund more HTML5 sim development.</p><p>The Android app can be volume purchased by schools or other organizations looking for multiple licenses on <a href="https://play.google.com/work/apps/details?id=edu.colorado.phet.android_app">Android Managed Google Play</a></p><p>For information about managing Android apps on Chromebooks, <a href="https://support.google.com/chrome/a/answer/7131624?hl=en">click here</a></p><p>The following steps are required to do a managed purchase of our Android App and deploy on Chromebooks:<ol><li>You'll first want to ensure your Chromebooks are compatible with Android apps: <a href="https://www.chromium.org/chromium-os/chrome-os-systems-supporting-android-apps">https://www.chromium.org/chromium-os/chrome-os-systems-supporting-android-apps</a></li><li>Then, you'll need to enable Android apps: <a href="https://support.google.com/chrome/a/answer/7131624?hl=en">https://support.google.com/chrome/a/answer/7131624?hl=en&ref_topic=2936230</a></li><li>In order to purchase bulk licenses, you'll need to sign in and purchase via "Managed Google Play": <a href="https://play.google.com/work/apps/details?id=edu.colorado.phet.android_app">https://play.google.com/work/apps/details?id=edu.colorado.phet.android_app</a></li><li>Once purchased, you'll need to approve the app and decide how apps are installed:<a href="https://support.google.com/chrome/a/answer/7131624?hl=en">https://support.google.com/chrome/a/answer/7131624?hl=en</a></li></ol></p><p>Another useful set of instructions created by a teacher is available here: <a href="https://www.controlaltachieve.com/2017/10/using-android-apps-on-chromebooks.html">https://www.controlaltachieve.com/2017/10/using-android-apps-on-chromebooks.html</a></p></div>
+      </div>
+    </div><div style="display: block;">
+      
+      <div style="display: inline-block;">
+        <div>
+  <h2 class="question triangle-right-blue" id="q49-header">
+    <button class="expandable-text-link click-area-expand" onclick="this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='true'?false:true); return window.phet.toggleExpandableText('q49')" aria-controls="q49" aria-expanded="false" aria-selected="false">
+      <span>Are PhET sims compatible with my Android device?</span>
+    </button>
+  </h2>
+  
+</div>
+        <div class="answer" id="q49"><p><br/>Our original Java and Flash sims are not compatible with Android devices. Our <a href="https://play.google.com/store/apps/details?id=edu.colorado.phet.android_app&amp;hl=en">Android app</a> allows native offline use of all the HTML5 sims. The app is $0.99 and proceeds fund more HTML5 sim development.</p></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var runningSimsInterval = setInterval( function() {
+      if ( typeof $ !== 'undefined' ) {
+        clearInterval( runningSimsInterval );
+        var $ua = $( '#q39' );
+        $ua.children().last().text(
+            $ua.children().last().text().replace( '{{USER_AGENT}}', navigator.userAgent )
+        );
+      }
+    }, 200 );
+  </script>
+</div>
+  </div>
+
+  </div>
+  <div id="react-root"></div>
+
+  <div id="page-footer" class="ltr">
+  <div class="main-footer">
+    <div>
+  
+    <hr>
+    <div id="social-footer" dir="ltr">
+      <span>
+        <a class="footer-link" href="http://www.facebook.com/pages/PhET-Interactive-Simulations/161503243888932?v=wall" rel="external nofollow" title="在 Facebook 按讚" aria-label="在 Facebook 按讚" dir="ltr">
+          <i class="fa fa-facebook"></i>
+        </a>
+      </span><span>
+        <a class="footer-link" href="http://twitter.com/PhETSims" rel="external nofollow" title="在 Twitter 上跟隨我們" aria-label="在 Twitter 上跟隨我們" dir="ltr">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </span><span>
+        <a class="footer-link" href="https://www.instagram.com/phetsims/" rel="external nofollow" title="在 Instagram 跟隨我們" aria-label="在 Instagram 跟隨我們" dir="ltr">
+          <i class="fa fa-instagram"></i>
+        </a>
+      </span><span>
+        <a class="footer-link" href="https://www.youtube.com/channel/UCMRZ0-ci4ifGBF1bJvrcDRQ" rel="external nofollow" title="在 Youtube 上看我們的影片" aria-label="在 Youtube 上看我們的影片" dir="ltr">
+          <i class="fa fa-youtube-play"></i>
+        </a>
+      </span><span>
+        <a class="footer-link" href="http://www.pinterest.com/PhETSims" rel="external nofollow" title="在 Pinterest 跟隨我們" aria-label="在 Pinterest 跟隨我們" dir="ltr">
+          <i class="fa fa-pinterest-p"></i>
+        </a>
+      </span>
+    </div>
+    <hr>
+  
+</div>
+    <div id="footer-nav-links">
+      <div>
+        <a href="../../about.html"><span class="floating-link">關於 PhET</span></a>
+        <a href="../../about/team.html"><span class="floating-link">我們的團隊</span></a>
+        <a href="../../about/sponsors.html"><span class="floating-link">贊助單位</span></a>
+      </div>
+      <div>
+        <a href="https://phet.colorado.edu/zh_TW/offline-access"><span class="floating-link">離線版</span></a>
+        <a href="../getting-started.html"><span class="floating-link">Help Center</span></a>
+        <a href="../../about/contact.html"><span class="floating-link">聯繫</span></a>
+      </div>
+      <div>
+        <a href="../../about/source-code.html"><span class="floating-link">原始碼</span></a>
+        <a href="../../licensing.html"><span class="floating-link">授權</span></a>
+        <a href="../../for-translators.html"><span class="floating-link">翻譯我們的教學</span></a>
+      </div>
+    </div>
+    <div class="other-languages">
+      <div class="translation-links">
+  
+
+  <span>
+      <a href="android.html"><span class="current-locale">正體中文</span></a>
+  </span><span>
+      <a href="../../../en/help-center/running-sims/android.html"><span>English</span></a>
+  </span>
+
+  <div style="display: none" id="locale" locale="zh_TW"></div>
+
+
+</div>
+      <div class="translation-credits">本網站及模擬之正體中文部份，由<a href="http://ezgo.westart.tw/">臺灣 PhET 社群</a>進行翻譯與維護<br><br/>請見<a href="http://iychiang1809.blogspot.tw/2015/04/phet.html">翻譯與貢獻者名單</a></div>
+    </div>
+
+    <div id="app-badges">
+      <span>
+  <a href="https://apps.apple.com/tw/app/phet-simulations/id1134126831">
+    <img style="width: 120px;" src="../../../images/ios-app-store-badges/HKTW(TC)/badge.svg">
+  </a>
+</span>
+      
+    </div>
+
+  </div>
+  <div class="footer-highlight-background">
+    <div class="footer-bottom">
+      <div class="left">
+        <table>
+          <tr>
+            <td class="sponsor">
+              <a href="http://www.hewlett.org/" rel="external" dir="ltr">
+                <img src="../../../images/support/Hewlett_logo_footer_vv.png"
+                     alt="Hewlett Foundation" width="100" />
+              </a>
+            </td>
+            <td class="sponsor">
+              <a href="http://www.nsf.gov/" rel="external" dir="ltr">
+                <img src="../../../images/support/NSF_logo_footer-01.png"
+                     alt="National Science Foundation" width="56" />
+              </a>
+            </td>
+            <td class="sponsor">
+              <a href="https://www.google.org/" rel="external" dir="ltr">
+                <img src="../../../images/support/google.org_dark.png"
+                     alt="Google.org" width="131" />
+              </a>
+            </td>
+            <td class="sponsor">
+              <a href="http://www.moore.org/" rel="external" dir="ltr">
+                <img src="../../../images/support/Moore_Foundation_logo_footer-01.png"
+                     alt="Moore Foundation" width="100" />
+              </a>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="right">
+        <div id="PhET-logo">
+          <a href="../../index.html">
+            <img src="../../../images/phet-logo-trademarked-black.png" alt="PhET Home Page" title="Go to the PhET home page" style="border: none;"
+                 width="90" id="phet-logo-main-image">
+          </a>
+        </div>
+        <div class="copyright">
+          <a href="../../licensing.html">
+            <span>&copy;<span>2020 University of Colorado. </span></span>
+            <br />
+            部份權利保留
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script type="text/javascript" src="../../../js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="../../../js/phet-v50-min.js"></script>
+</div>
+</body>
+
+<!-- Mirrored from phet.colorado.edu/zh_TW/help-center/running-sims/android by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Apr 2020 04:27:42 GMT -->
+</html>
+
